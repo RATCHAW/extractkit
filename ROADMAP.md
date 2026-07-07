@@ -7,10 +7,12 @@
 
 ## Phase 1 — Core library (`packages/core`)
 
-- [ ] Zod schema → PDF/image → validated JSON with per-field `{ value, confidence, page, bbox }`
-- [ ] Provider-agnostic model layer (Vercel AI SDK)
-- [ ] OCR-failure handling, retries, streaming, cost tracking
-- [ ] Vitest suite covering the failure paths, not just happy path
+- [x] Zod schema → PDF/image → validated JSON with per-field `{ value, confidence, page, bbox }`
+- [x] Provider-agnostic model layer (Vercel AI SDK v7; models passed in, no provider coupling)
+- [x] OCR-failure handling, retries, streaming, cost tracking
+- [x] Vitest suite covering the failure paths, not just happy path (53 tests, mock models)
+
+Tested against mock models only so far; first live-provider validation happens when Phase 2 eval runs stand up.
 
 ## Phase 2 — Evals (`packages/evals`)
 
