@@ -2,7 +2,8 @@
 
 ## Phase 0 — Pre-flight
 
-- [ ] Benchmark dataset chosen (~50 public invoices/receipts; candidates: SROIE, CORD, RVL-CDIP subsets)
+- [x] Benchmark dataset chosen: **25 DocILE invoices + 25 CORD-v2 receipts**, pinned by doc ID + checksum, fetched from canonical hosts (never vendored). Decision record: [docs/benchmark-dataset.md](./docs/benchmark-dataset.md)
+- [ ] Request DocILE access token at [docile.rossum.ai](https://docile.rossum.ai/) — human action; blocks the Phase 2 data pull (CORD half is ungated)
 
 ## Phase 1 — Core library (`packages/core`)
 
@@ -13,7 +14,7 @@
 
 ## Phase 2 — Evals (`packages/evals`)
 
-- [ ] Harness: accuracy per field per model, cost per 1k docs
+- [ ] Harness: accuracy per field per model, grounding accuracy (predicted vs. ground-truth bbox), cost per 1k docs
 - [ ] Benchmark page generated from real runs (engineering target: >90% field accuracy on the invoice set)
 - [ ] Benchmark table in README
 
