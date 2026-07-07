@@ -1,0 +1,55 @@
+{
+  "name": "extractkit",
+  "version": "0.1.0",
+  "description": "Schema-first document extraction with per-field provenance: Zod schema + PDF/image in, validated JSON with page, bbox, and confidence out.",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RATCHAW/extractkit.git",
+    "directory": "packages/core"
+  },
+  "keywords": [
+    "document-extraction",
+    "ocr",
+    "zod",
+    "structured-output",
+    "pdf",
+    "invoice",
+    "receipt",
+    "ai-sdk"
+  ],
+  "type": "module",
+  "sideEffects": false,
+  "engines": {
+    "node": ">=20.19"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.mts",
+      "default": "./dist/index.mjs"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsdown",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "pdf-lib": "^1.17.1"
+  },
+  "peerDependencies": {
+    "ai": "^7.0.0",
+    "zod": "^4.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^26.1.0",
+    "ai": "^7.0.16",
+    "tsdown": "^0.22.3",
+    "typescript": "^6.0.3",
+    "vitest": "^4.1.10",
+    "zod": "^4.4.3"
+  }
+}

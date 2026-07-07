@@ -4,7 +4,7 @@ extractkit is an open-source TypeScript document-extraction engine: Zod schema +
 
 ## Current Phase
 
-**Pre-development — spec and planning only.** This repo intentionally contains no code yet. Do not scaffold packages, configs, or app code unless explicitly asked to start building. Until then, work happens in the md files (spec refinement, roadmap, API design sketches).
+**Phase 1 (core library) shipped; Phase 2 (evals) is next.** `packages/core` is implemented and tested against mock models — it has not been validated against live providers yet; that happens as Phase 2 stands up. `packages/evals` and `apps/playground` do not exist yet. Keep README/ROADMAP/docs in sync with what actually ships. Requesting the DocILE dataset token (see ROADMAP Phase 0) is a pending human action that gates the Phase 2 data pull.
 
 ## Planned Architecture
 
