@@ -16,9 +16,11 @@ Tested against mock models only so far; first live-provider validation happens w
 
 ## Phase 2 — Evals (`packages/evals`)
 
-- [ ] Harness: accuracy per field per model, grounding accuracy (predicted vs. ground-truth bbox), cost per 1k docs
-- [ ] Benchmark page generated from real runs (engineering target: >90% field accuracy on the invoice set)
-- [ ] Benchmark table in README
+- [x] Harness: accuracy per field per model, grounding accuracy (predicted vs. ground-truth bbox), cost per 1k docs — tested against mock models; report generation from recorded runs
+- [x] Receipt half pinned: 25 CORD-v2 test docs curated by mapping-consistency checks, pinned by id + SHA-256 in `packages/evals/data/manifest.json`
+- [ ] Invoice half pinned: blocked on the DocILE token (Phase 0 human action); curation script is ready
+- [ ] First live eval run (needs `ANTHROPIC_API_KEY`) → benchmark page generated from real runs (engineering target: >90% field accuracy on the invoice set)
+- [ ] Benchmark table in README (markers in place; filled by `pnpm report` from a recorded run)
 
 ## Phase 3 — Playground (`apps/playground`)
 

@@ -1,0 +1,142 @@
+{
+  "version": 1,
+  "cord": {
+    "dataset": "naver-clova-ix/cord-v2",
+    "revision": "7f0115a4b758a71d6473b8d085751692da2fef98",
+    "file": "data/test-00000-of-00001-9c204eb3f4e11791.parquet",
+    "sha256": "51c65f1788faff392abe2a0b55b023eb23e9be551c509138eaa3a832514224e7",
+    "split": "test",
+    "docs": [
+      {
+        "rowIndex": 0,
+        "imageId": 0,
+        "imageSha256": "8612d04b70f430f3aef07fbbd5200e382dcc4152b344cc2eff9f735f05a257c8"
+      },
+      {
+        "rowIndex": 1,
+        "imageId": 1,
+        "imageSha256": "5852cbe48df03646524e717e987eb3d0ac329a52fd192070b5fda1222a053789"
+      },
+      {
+        "rowIndex": 2,
+        "imageId": 2,
+        "imageSha256": "571ac6af26e75de8c06747a8c536c778f19a4562879090813571eddc74603d34"
+      },
+      {
+        "rowIndex": 3,
+        "imageId": 3,
+        "imageSha256": "8f73f0c4803ea8815040a50e3389d4f3fa15e8c28cb6d50ea9854f6f6c22bd63"
+      },
+      {
+        "rowIndex": 4,
+        "imageId": 4,
+        "imageSha256": "8f3eee7068c96e86cdb2e4b5c53085cb5e1439462edd55c373548cb1962801ad"
+      },
+      {
+        "rowIndex": 5,
+        "imageId": 5,
+        "imageSha256": "0b63b666b54ea615d1d05733ee2c6fc24f20e1a6c77b333872fa80fff28b2c48"
+      },
+      {
+        "rowIndex": 6,
+        "imageId": 6,
+        "imageSha256": "1c091eb7436b3e5a813eb6492c0350ef4eb14e3fdad78d42da35df669c757292"
+      },
+      {
+        "rowIndex": 7,
+        "imageId": 7,
+        "imageSha256": "810d3545f4105b19757c4b8b35934a477cde8cd1875302d9092315d2f960ef93"
+      },
+      {
+        "rowIndex": 8,
+        "imageId": 8,
+        "imageSha256": "58716693a6c0733358e66e64d7064a5a845424280bb55f9b5fa137b1af8c92fe"
+      },
+      {
+        "rowIndex": 9,
+        "imageId": 9,
+        "imageSha256": "0411c4d9beb9be65165fdb70c2b60f8bbf9035cc9661be2b8d4c73bbfcff7972"
+      },
+      {
+        "rowIndex": 10,
+        "imageId": 10,
+        "imageSha256": "2a5d18c199bdbb75010a54430429cf694b35bdca8bf560d1d0db1fbb090dedb8"
+      },
+      {
+        "rowIndex": 11,
+        "imageId": 11,
+        "imageSha256": "d92479ab212713e7a65e56aacc5e68c0713597476608cbc394d997971043010b"
+      },
+      {
+        "rowIndex": 12,
+        "imageId": 12,
+        "imageSha256": "b5f8a3a9a5431b8e38a8e5a16011d6a5a457f7ae4c4ef31da77e589c0b1ad882"
+      },
+      {
+        "rowIndex": 14,
+        "imageId": 14,
+        "imageSha256": "9dcf1f9f86c909b762767cb07d1cc0db30773d556154ce42e0210f65270ee39d"
+      },
+      {
+        "rowIndex": 15,
+        "imageId": 15,
+        "imageSha256": "f1cd67a7d67d04ba8d5b685553b1b5addbf2039d5954ab08c92139c0ad88a796"
+      },
+      {
+        "rowIndex": 16,
+        "imageId": 16,
+        "imageSha256": "eef326565b3945217a69afd84c893afdffd03a2f487943661c2423e6d6ec0d7d"
+      },
+      {
+        "rowIndex": 17,
+        "imageId": 17,
+        "imageSha256": "4322ab5ec4f0b1365e08af0c31288e65e8cbd2c8eb5241adfb329244acbbb30b"
+      },
+      {
+        "rowIndex": 18,
+        "imageId": 18,
+        "imageSha256": "88c35bbd2e2a634e89f2c5bfd30f7b530b1082c1f4e6e7cb3cb913f0b46c3868"
+      },
+      {
+        "rowIndex": 19,
+        "imageId": 19,
+        "imageSha256": "b076921ed83bdf900cab539f219cac8dddfaa4a99c13f7d66d7303d9f8c4c8c7"
+      },
+      {
+        "rowIndex": 20,
+        "imageId": 20,
+        "imageSha256": "6213439292eb4c2ad7e04afab6bb5bc7d1d5925d18dc392c36f233d394ca7c19"
+      },
+      {
+        "rowIndex": 29,
+        "imageId": 29,
+        "imageSha256": "1f065c268473d727282005e57441c55c3249afe0da54f3bc08823d0cbe730610"
+      },
+      {
+        "rowIndex": 30,
+        "imageId": 30,
+        "imageSha256": "52879816c28ebc3a7bc777c31685fb71f36bc4d1f7d7dc9c0b743fc5aced84de"
+      },
+      {
+        "rowIndex": 35,
+        "imageId": 35,
+        "imageSha256": "453a4ad5aadf63b2a7efdfa0915d45fd72c426254ab8f7c84d5621d56445794c"
+      },
+      {
+        "rowIndex": 38,
+        "imageId": 38,
+        "imageSha256": "b7afc72ae79e1c0b23b46c83ae89031bb08ce5aec5e532e7a6f74b9511dc7fda"
+      },
+      {
+        "rowIndex": 41,
+        "imageId": 41,
+        "imageSha256": "994b983a7f51670ca67b35bbaf9a11c8852abf1711651448d4ce39f8f8119d6f"
+      }
+    ]
+  },
+  "docile": {
+    "archive": "annotated-trainval",
+    "split": "val",
+    "docs": []
+  }
+}
