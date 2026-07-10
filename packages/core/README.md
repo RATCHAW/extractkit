@@ -10,7 +10,7 @@
 npm install extractkit ai zod
 ```
 
-`ai` (Vercel AI SDK v7) and `zod` (v4) are peer dependencies. Bring any AI SDK provider, e.g. `@ai-sdk/anthropic`.
+`ai` (Vercel AI SDK v7) and `zod` (v4) are peer dependencies. Bring any AI SDK provider — e.g. `@ai-sdk/anthropic`, `@ai-sdk/openai`, or `@ai-sdk/google` — and pass its model to `extract`.
 
 ## Quickstart
 

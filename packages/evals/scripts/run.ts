@@ -21,6 +21,7 @@ async function exists(path: string): Promise<boolean> {
 
 const { manifest, checksum } = await loadManifest();
 const models = benchmarkModels();
+console.log(`models under test: ${models.map((m) => m.name).join(', ')}`);
 
 const docs: EvalDocument[] = [];
 if (manifest.cord.docs.length > 0) {
