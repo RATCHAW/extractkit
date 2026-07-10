@@ -1,0 +1,33 @@
+{
+  "name": "@extractkit/evals",
+  "private": true,
+  "version": "0.0.0",
+  "description": "Benchmark harness for extractkit: per-field value accuracy, grounding accuracy, and cost per 1k docs on pinned public invoices and receipts.",
+  "type": "module",
+  "engines": {
+    "node": ">=20.19"
+  },
+  "scripts": {
+    "fetch-data": "tsx scripts/fetch.ts",
+    "pin": "tsx scripts/pin.ts",
+    "run-eval": "tsx scripts/run.ts",
+    "report": "tsx scripts/report.ts",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@ai-sdk/anthropic": "^4.0.10",
+    "@ai-sdk/google": "^4.0.12",
+    "@ai-sdk/openai": "^4.0.11",
+    "ai": "^7.0.16",
+    "extractkit": "workspace:*",
+    "hyparquet": "^1.14.0",
+    "zod": "^4.4.3"
+  },
+  "devDependencies": {
+    "@types/node": "^26.1.0",
+    "tsx": "^4.19.2",
+    "typescript": "^6.0.3",
+    "vitest": "^4.1.10"
+  }
+}

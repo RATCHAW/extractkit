@@ -4,7 +4,7 @@ extractkit is an open-source TypeScript document-extraction engine: Zod schema +
 
 ## Current Phase
 
-**Phase 1 (core library) shipped; Phase 2 (evals) is next.** `packages/core` is implemented and tested against mock models — it has not been validated against live providers yet; that happens as Phase 2 stands up. `packages/evals` and `apps/playground` do not exist yet. Keep README/ROADMAP/docs in sync with what actually ships. Requesting the DocILE dataset token (see ROADMAP Phase 0) is a pending human action that gates the Phase 2 data pull.
+**Phase 2 (evals) harness shipped; live runs and the DocILE half are pending.** `packages/core` and the `packages/evals` harness are implemented and tested against mock models. The 25 CORD-v2 receipts are pinned in `packages/evals/data/manifest.json`; the 25 DocILE invoices are blocked on the dataset token (ROADMAP Phase 0, pending human action) — loader and curation script are ready. The eval lineup spans Anthropic, OpenAI, and Google Gemini (`packages/evals/src/models.ts`); a run includes every provider whose API key is set, or the subset named in `EVAL_PROVIDERS`. The first live eval run (needs at least one provider key — `ANTHROPIC_API_KEY`, `OPENAI_API_KEY`, or `GOOGLE_GENERATIVE_AI_API_KEY`) doubles as core's first live-provider validation and fills the benchmark page + README table via `pnpm report`. `apps/playground` does not exist yet. Keep README/ROADMAP/docs in sync with what actually ships.
 
 ## Planned Architecture
 
