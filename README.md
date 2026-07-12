@@ -50,6 +50,26 @@ TypeScript has structured-output libraries (instructor-js, AI SDK `generateObjec
 
 See [ROADMAP.md](./ROADMAP.md) for the build plan.
 
+## Development
+
+This is a pnpm + [Turborepo](https://turborepo.com) monorepo. Clone, install, copy the one env file, and start the playground:
+
+```sh
+pnpm install
+cp .env.example .env   # fill in at least one provider key
+pnpm dev               # builds core, then the playground: Hono API + Vite client on :5173
+```
+
+Every package reads that single root `.env` (provider keys, `PORT`, and the eval settings); anything already set in your shell wins over the file. All common scripts run from the root, and Turbo builds `packages/core` first wherever a task needs it:
+
+```sh
+pnpm build       # build every package (core first)
+pnpm test        # run every package's tests
+pnpm typecheck   # typecheck every package
+```
+
+The eval scripts (`pnpm fetch-data`, `pnpm pin`, `pnpm run-eval`, `pnpm report`) also run from the root — see [packages/evals](./packages/evals/README.md).
+
 ## Benchmark
 
 <!-- benchmark:start -->

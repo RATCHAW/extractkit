@@ -1,5 +1,6 @@
 // Regenerates docs/benchmark.md and the README benchmark table from a run
 // record. Usage: pnpm report [results/run-....json] (defaults to the latest).
+import '../src/env.js';
 import { readdir, readFile, writeFile } from 'node:fs/promises';
 import { join } from 'node:path';
 import { renderBenchmarkPage, renderReadmeTable } from '../src/report.js';

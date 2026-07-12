@@ -1,5 +1,6 @@
 // Runs the benchmark: every pinned document through every model, raw results
 // serialized to results/ so reports are reproducible from the run record.
+import '../src/env.js';
 import { access, mkdir, writeFile } from 'node:fs/promises';
 import { join } from 'node:path';
 import { loadCordDocuments } from '../src/datasets/cord-source.js';

@@ -1,14 +1,8 @@
+import './env';
 import { serve } from '@hono/node-server';
 import { serveStatic } from '@hono/node-server/serve-static';
 import { createApp } from './app';
 import { resolveModels } from './models';
-
-// Load a local .env if present; in deployment the vars come from the real env.
-try {
-  process.loadEnvFile('.env');
-} catch {
-  // No .env file — fall back to the ambient environment.
-}
 
 const models = resolveModels();
 const app = createApp({ models });

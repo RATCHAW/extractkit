@@ -6,16 +6,19 @@ Documents are never vendored. [`data/manifest.json`](./data/manifest.json) pins 
 
 ## Reproducing the benchmark
 
-```sh
-pnpm install && pnpm build          # from the repo root; evals imports core's build
+All commands run from the repo root. Provider keys and `DOCILE_TOKEN` come from the single root `.env` (`cp .env.example .env`); anything already exported in your shell wins over the file. Turbo builds core first where a task needs it.
 
-cd packages/evals
-pnpm fetch-data                     # CORD parquet (~230 MB) into .data/, checksum-verified
-                                    # set DOCILE_TOKEN to also fetch the DocILE invoice half
-export ANTHROPIC_API_KEY=...        # and/or OPENAI_API_KEY / GOOGLE_GENERATIVE_AI_API_KEY
-pnpm run-eval                       # extract every pinned doc with every model → results/run-<ts>.json
-pnpm report [results/run-....json]  # regenerate docs/benchmark.md + the README table
+```sh
+pnpm install
+cp .env.example .env                # set a provider key (+ DOCILE_TOKEN for the invoice half)
+
+pnpm fetch-data                     # CORD parquet (~230 MB) into packages/evals/.data/, checksum-verified
+                                    # DOCILE_TOKEN also fetches the DocILE invoice half
+pnpm run-eval                       # builds core, then extracts every pinned doc with every model → results/run-<ts>.json
+pnpm report                         # regenerate docs/benchmark.md + the README table from the latest run
 ```
+
+`pnpm report` defaults to the newest run record; pass a specific one with `pnpm report -- results/run-....json` (the path is relative to `packages/evals`).
 
 Without `DOCILE_TOKEN` the receipt half still runs; the invoice half needs a free token from [docile.rossum.ai](https://docile.rossum.ai/) (DocILE terms prohibit redistributing the documents, so every runner requests their own).
 
@@ -29,7 +32,7 @@ The lineup (`src/models.ts`) spans three providers — **Anthropic**, **OpenAI**
 | OpenAI | `OPENAI_API_KEY` | `gpt-5.6-sol`, `gpt-5.6-luna`, `gpt-5.4-mini` |
 | Google | `GOOGLE_GENERATIVE_AI_API_KEY` | `gemini-3.5-flash`, `gemini-2.5-pro`, `gemini-2.5-flash`, `gemini-2.5-flash-lite` |
 
-By default the run includes every provider whose API key is set, so exporting only `OPENAI_API_KEY` benchmarks OpenAI alone — a cheaper way to iterate than the full Anthropic lineup. Pin the selection explicitly with `EVAL_PROVIDERS` (comma-separated, e.g. `EVAL_PROVIDERS=openai,google`); each named provider must have its key set.
+By default the run includes every provider whose API key is set, so setting only `OPENAI_API_KEY` (in the root `.env` or your shell) benchmarks OpenAI alone — a cheaper way to iterate than the full Anthropic lineup. Pin the selection explicitly with `EVAL_PROVIDERS` (comma-separated, e.g. `EVAL_PROVIDERS=openai,google`); each named provider must have its key set. Set it in `.env`, or inline for one run: `EVAL_PROVIDERS=openai,google pnpm run-eval`.
 
 To run a single model instead of a provider's whole lineup, set `EVAL_MODELS` to a comma-separated list of model names (e.g. `EVAL_MODELS=gemini-3.5-flash pnpm run-eval`). Each named model must belong to a provider whose key is set; unknown or unkeyed model names fail fast.
 

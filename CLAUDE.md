@@ -8,7 +8,7 @@ extractkit is an open-source TypeScript document-extraction engine: Zod schema +
 
 ## Planned Architecture
 
-pnpm monorepo:
+pnpm + Turborepo monorepo. Tasks run through Turbo (`turbo.json`), and every common script — `dev`, `build`, `test`, `typecheck`, and the eval scripts — is exposed from the root `package.json`. All packages read one git-ignored root `.env` (copy `.env.example`); ambient/exported vars still win. Turbo builds `packages/core` first (`dependsOn: ["^build"]`) so its dependents typecheck and run against the built `dist/`.
 
 - **`packages/core`** — the library. Input: Zod schema + document (PDF/image). Output: validated JSON with per-field `{ value, confidence, page, bbox }`. Provider-agnostic via Vercel AI SDK. Production plumbing is first-class: OCR-failure handling, retries, streaming, cost tracking.
 - **`packages/evals`** — benchmark harness. ~50 real public documents (invoices/receipts), accuracy per field per model, cost per 1k docs. Results publish to a benchmark page and the README table.
@@ -18,6 +18,7 @@ pnpm monorepo:
 
 - TypeScript strict everywhere; Zod for schemas (it's the public API surface).
 - Hono for the playground/API backend. Vite for the client. Vitest for tests.
+- Turborepo for task orchestration and caching; a single root `.env` for all packages.
 - Vercel AI SDK for model calls — no direct provider SDK coupling in core.
 - Skills for Hono, Vite, and Vitest are installed in this repo — use them when working on those layers.
 
