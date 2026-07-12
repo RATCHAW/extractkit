@@ -32,7 +32,7 @@ Live-provider path validated via the playground and the first Phase 2 eval run (
 
 - [x] README final: pitch, benchmark table, demo GIF, quickstart
 - [x] MIT license (repo root + shipped in the npm package)
-- [ ] Publish `@ratchaw/extractkit` to npm — package is publish-ready (tarball verified: dist + README + LICENSE; scoped, `publishConfig.access: public`); blocked on `npm login`, then `pnpm --filter @ratchaw/extractkit publish` (human action)
+- [ ] Publish `@ratchaw/extractkit` to npm — package is publish-ready (tarball verified: dist + README + LICENSE; scoped, `publishConfig.access: public`); auth via granular access token (bypass-2FA) read from `NPM_TOKEN` by the repo `.npmrc`, then `NPM_TOKEN=… pnpm --filter @ratchaw/extractkit publish` (human action)
 
 ## Non-goals for v1
 
