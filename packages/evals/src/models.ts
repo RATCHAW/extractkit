@@ -78,23 +78,35 @@ function parseProviders(raw: string): Provider[] {
 }
 
 /**
+ * A provider counts as configured only when its API key is a non-empty string,
+ * matching the playground's model resolver. A blank `KEY=` line in a `.env`
+ * therefore reads as unset instead of triggering a doomed run against a provider
+ * with no credential.
+ */
+function hasApiKey(env: NodeJS.ProcessEnv, provider: Provider): boolean {
+  const value = env[CATALOG[provider].apiKeyEnv];
+  return value !== undefined && value !== '';
+}
+
+/**
  * Which providers to benchmark. `EVAL_PROVIDERS` selects them explicitly
  * (comma-separated, e.g. `openai` or `openai,google`); each named provider
- * must have its API key set. When unset, every provider whose API key is
- * present runs — so setting only `OPENAI_API_KEY` benchmarks OpenAI alone.
+ * must have its API key set. When unset (or blank), every provider whose API
+ * key is present runs — so setting only `OPENAI_API_KEY` benchmarks OpenAI
+ * alone. An empty key value counts as absent, same as the playground.
  */
 export function selectProviders(env: NodeJS.ProcessEnv = process.env): Provider[] {
   const raw = env['EVAL_PROVIDERS'];
-  if (raw !== undefined) {
+  if (raw !== undefined && raw.trim() !== '') {
     const requested = parseProviders(raw);
-    const missing = requested.filter((p) => env[CATALOG[p].apiKeyEnv] === undefined);
+    const missing = requested.filter((p) => !hasApiKey(env, p));
     if (missing.length > 0) {
       const detail = missing.map((p) => `${p} (${CATALOG[p].apiKeyEnv})`).join(', ');
       throw new Error(`Missing API key for selected provider(s): ${detail}.`);
     }
     return requested;
   }
-  const available = PROVIDERS.filter((p) => env[CATALOG[p].apiKeyEnv] !== undefined);
+  const available = PROVIDERS.filter((p) => hasApiKey(env, p));
   if (available.length === 0) {
     const keys = PROVIDERS.map((p) => CATALOG[p].apiKeyEnv).join(', ');
     throw new Error(`No provider API key found; set one of ${keys}, or pick providers with EVAL_PROVIDERS.`);
