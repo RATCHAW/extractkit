@@ -84,6 +84,13 @@ export function unreadableEnvelope(): string {
   return JSON.stringify({ readable: false, issues: ['Page is blank.'], fields: invoiceFields() });
 }
 
+/** An invoice envelope where the required `total` was not found. */
+export function missingTotalEnvelope(): string {
+  const fields = invoiceFields();
+  fields.total = wireLeaf(null);
+  return JSON.stringify({ readable: true, issues: [], fields });
+}
+
 const DEMO_PRICING: Pricing = { inputPerMTokUSD: 3, outputPerMTokUSD: 15 };
 
 /** A PlaygroundModel backed by a mock that streams `envelope`. */

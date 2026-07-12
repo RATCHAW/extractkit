@@ -1,5 +1,7 @@
 # extractkit
 
+![extractkit playground — drop in a document, watch fields stream in, hover a field to highlight its source region on the page](./docs/demo.gif)
+
 **Extraction you can audit.** Define a Zod schema, feed it a PDF or image, get back schema-validated JSON where every field carries provenance — the page and bounding box it came from — plus a confidence score.
 
 > **Status: in development.** The core library ([`packages/core`](./packages/core)), the eval harness ([`packages/evals`](./packages/evals)), and the playground ([`apps/playground`](./apps/playground)) are implemented and tested. The first live provider run is in — the OpenAI lineup across the CORD-v2 receipt set — validating core's live path and publishing the [benchmark](#benchmark) below. Still open: the Anthropic and Gemini lineups, the DocILE invoice half (blocked on a dataset token), and the demo GIF. See [ROADMAP.md](./ROADMAP.md).

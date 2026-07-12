@@ -1,11 +1,14 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import type { DragEvent } from 'react';
-import { GlobalWorkerOptions, getDocument } from 'pdfjs-dist';
+import { GlobalWorkerOptions, Util, getDocument } from 'pdfjs-dist';
 import type { PDFDocumentLoadingTask, PDFPageProxy } from 'pdfjs-dist';
 import workerSrc from 'pdfjs-dist/build/pdf.worker.min.mjs?url';
+import type { BBox as BBoxRect } from 'extractkit';
 import type { FieldEntry } from '../lib/fields';
 import { formatPath, formatValue } from '../lib/fields';
 import { bboxToStyle } from '../lib/geometry';
+import type { TextSpan } from '../lib/snap';
+import { locateField } from '../lib/snap';
 import { isPdf, pickFile } from '../lib/upload';
 
 GlobalWorkerOptions.workerSrc = workerSrc;
@@ -44,39 +47,78 @@ export function DocumentViewer(props: ViewerProps) {
       {isPdf(file) ? (
         <PdfView file={file} boxes={boxes} activeKey={activeKey} onActivate={onActivate} />
       ) : (
-        <div className="page-stack">
-          <ImagePage
-            src={docUrl}
-            pageIndex={0}
-            boxes={boxes}
-            activeKey={activeKey}
-            onActivate={onActivate}
-          />
-        </div>
+        <ImagePage src={docUrl} boxes={boxes} activeKey={activeKey} onActivate={onActivate} />
       )}
     </div>
   );
 }
 
-interface PageBoxProps {
+/** A field placed on a specific page, with the bbox to draw. */
+interface PlacedBox {
+  entry: FieldEntry;
+  bbox: BBoxRect;
+}
+
+interface OverlayProps {
   boxes: FieldEntry[];
-  pageIndex: number;
   activeKey: string | null;
   onActivate: (key: string | null) => void;
 }
 
-function ImagePage({ src, ...page }: { src: string } & PageBoxProps) {
+function ImagePage({ src, boxes, activeKey, onActivate }: { src: string } & OverlayProps) {
+  // Images have no text layer to snap to; draw the model's own provenance.
+  const placed = useMemo(
+    () =>
+      boxes
+        .filter((box) => box.field.bbox !== null && (box.field.page ?? 0) === 0)
+        .map((box) => ({ entry: box, bbox: box.field.bbox! })),
+    [boxes],
+  );
   return (
-    <div className="page">
-      <img className="page-image" src={src} alt="Uploaded document" />
-      <BoxLayer {...page} />
+    <div className="page-stack">
+      <div className="page">
+        <img className="page-image" src={src} alt="Uploaded document" />
+        <BoxLayer placed={placed} activeKey={activeKey} onActivate={onActivate} />
+      </div>
     </div>
   );
 }
 
-function PdfView({ file, boxes, activeKey, onActivate }: { file: File } & Omit<PageBoxProps, 'pageIndex'>) {
-  const [pages, setPages] = useState<PDFPageProxy[]>([]);
+/** Positioned text runs of a page, normalized 0–1 with a top-left origin. */
+async function pageTextSpans(page: PDFPageProxy): Promise<TextSpan[]> {
+  const viewport = page.getViewport({ scale: 1 });
+  const content = await page.getTextContent();
+  const spans: TextSpan[] = [];
+  for (const item of content.items) {
+    if (!('str' in item) || item.str.trim() === '') continue;
+    const tx = Util.transform(viewport.transform, item.transform);
+    const fontHeight = Math.hypot(tx[2], tx[3]);
+    spans.push({
+      text: item.str,
+      x0: tx[4] / viewport.width,
+      y0: (tx[5] - fontHeight) / viewport.height,
+      x1: (tx[4] + item.width * viewport.scale) / viewport.width,
+      y1: tx[5] / viewport.height,
+    });
+  }
+  return spans;
+}
+
+function PdfView({ file, boxes, activeKey, onActivate }: { file: File } & OverlayProps) {
+  const [pages, setPages] = useState<{ page: PDFPageProxy; spans: TextSpan[] }[]>([]);
   const [error, setError] = useState<string | null>(null);
+
+  // Place every field: snap to the page text layer, rescuing fields whose
+  // model-reported bbox or page is missing or wrong.
+  const placedByPage = useMemo<PlacedBox[][]>(() => {
+    const spansByPage = pages.map((p) => p.spans);
+    const byPage: PlacedBox[][] = pages.map(() => []);
+    for (const entry of boxes) {
+      const located = locateField(entry.field.value, entry.field.page, entry.field.bbox, spansByPage);
+      if (located !== null) byPage[located.page]!.push({ entry, bbox: located.bbox });
+    }
+    return byPage;
+  }, [boxes, pages]);
 
   useEffect(() => {
     let cancelled = false;
@@ -90,7 +132,10 @@ function PdfView({ file, boxes, activeKey, onActivate }: { file: File } & Omit<P
         loadingTask = getDocument({ data: new Uint8Array(buffer) });
         const doc = await loadingTask.promise;
         const proxies = await Promise.all(
-          Array.from({ length: doc.numPages }, (_, i) => doc.getPage(i + 1)),
+          Array.from({ length: doc.numPages }, async (_, i) => {
+            const page = await doc.getPage(i + 1);
+            return { page, spans: await pageTextSpans(page) };
+          }),
         );
         if (cancelled) return;
         setPages(proxies);
@@ -108,10 +153,10 @@ function PdfView({ file, boxes, activeKey, onActivate }: { file: File } & Omit<P
 
   return (
     <div className="page-stack">
-      {pages.map((page, index) => (
+      {pages.map(({ page }, index) => (
         <div className="page" key={index}>
           <PdfCanvas page={page} />
-          <BoxLayer boxes={boxes} pageIndex={index} activeKey={activeKey} onActivate={onActivate} />
+          <BoxLayer placed={placedByPage[index]!} activeKey={activeKey} onActivate={onActivate} />
         </div>
       ))}
     </div>
@@ -143,12 +188,25 @@ function PdfCanvas({ page }: { page: PDFPageProxy }) {
   return <canvas ref={canvasRef} className="page-canvas" />;
 }
 
-function BoxLayer({ boxes, pageIndex, activeKey, onActivate }: PageBoxProps) {
-  const onPage = boxes.filter((box) => (box.field.page ?? 0) === pageIndex);
+function BoxLayer({
+  placed,
+  activeKey,
+  onActivate,
+}: {
+  placed: PlacedBox[];
+  activeKey: string | null;
+  onActivate: (key: string | null) => void;
+}) {
   return (
     <div className="box-layer">
-      {onPage.map((box) => (
-        <BBox key={box.key} entry={box} active={activeKey === box.key} onActivate={onActivate} />
+      {placed.map(({ entry, bbox }) => (
+        <BBox
+          key={entry.key}
+          entry={entry}
+          bbox={bbox}
+          active={activeKey === entry.key}
+          onActivate={onActivate}
+        />
       ))}
     </div>
   );
@@ -156,21 +214,21 @@ function BoxLayer({ boxes, pageIndex, activeKey, onActivate }: PageBoxProps) {
 
 function BBox({
   entry,
+  bbox,
   active,
   onActivate,
 }: {
   entry: FieldEntry;
+  bbox: BBoxRect;
   active: boolean;
   onActivate: (key: string | null) => void;
 }) {
   const ref = useRef<HTMLDivElement>(null);
-  const { bbox } = entry.field;
 
   useEffect(() => {
     if (active) ref.current?.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
   }, [active]);
 
-  if (bbox === null) return null;
   return (
     <div
       ref={ref}

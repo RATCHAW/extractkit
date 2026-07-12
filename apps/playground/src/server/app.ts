@@ -30,7 +30,10 @@ function toSerialized(result: ExtractResult<z.ZodObject>): SerializedResult {
 function toApiError(err: unknown): ApiError {
   if (err instanceof ExtractKitError) {
     const mapped: ApiError = { name: err.name, code: err.code, message: err.message };
-    if (err instanceof MissingRequiredFieldsError) mapped.missingPaths = err.missingPaths;
+    if (err instanceof MissingRequiredFieldsError) {
+      mapped.missingPaths = err.missingPaths;
+      mapped.partial = { data: err.partial.data, fields: err.partial.fields, usage: err.usage };
+    }
     return mapped;
   }
   if (err instanceof Error) return { name: err.name, code: null, message: err.message };

@@ -16,6 +16,9 @@ interface ResultPanelProps {
 
 export function ResultPanel(props: ResultPanelProps) {
   const { phase, live, result, error, hasFile, activeKey, onActivate } = props;
+  // A failed run may still carry a partial extraction — show it under the error.
+  const fields = result !== null ? result.fields : (error?.partial?.fields ?? null);
+  const usage = result !== null ? result.usage : (error?.partial?.usage ?? null);
 
   return (
     <div className="result-panel">
@@ -26,18 +29,18 @@ export function ResultPanel(props: ResultPanelProps) {
 
       <div className="result-body">
         {error !== null && <ErrorBanner error={error} />}
-        {error === null && result !== null && (
+        {fields !== null && (
           <div className="tree">
-            <FieldNode node={result.fields} path={[]} activeKey={activeKey} onActivate={onActivate} />
+            <FieldNode node={fields} path={[]} activeKey={activeKey} onActivate={onActivate} />
           </div>
         )}
-        {error === null && result === null && phase === 'running' && (
+        {error === null && fields === null && phase === 'running' && (
           <LiveList entries={live} activeKey={activeKey} onActivate={onActivate} />
         )}
-        {error === null && result === null && phase !== 'running' && <EmptyHint hasFile={hasFile} />}
+        {error === null && fields === null && phase !== 'running' && <EmptyHint hasFile={hasFile} />}
       </div>
 
-      {error === null && result !== null && <ResultFooter result={result} />}
+      {usage !== null && <ResultFooter usage={usage} issues={result?.issues ?? []} />}
     </div>
   );
 }
@@ -201,8 +204,7 @@ function EmptyHint({ hasFile }: { hasFile: boolean }) {
   );
 }
 
-function ResultFooter({ result }: { result: SerializedResult }) {
-  const { usage } = result;
+function ResultFooter({ usage, issues }: { usage: SerializedResult['usage']; issues: string[] }) {
   return (
     <div className="result-footer">
       <div className="stats">
@@ -212,13 +214,13 @@ function ResultFooter({ result }: { result: SerializedResult }) {
         <Stat label="Cost" value={usage.costUSD !== null ? formatUSD(usage.costUSD) : '—'} />
         <Stat label="Est. / 1k docs" value={usage.costUSD !== null ? formatUSD(usage.costUSD * 1000) : '—'} />
       </div>
-      {result.issues.length > 0 && (
+      {issues.length > 0 && (
         <details className="issues">
           <summary>
-            {result.issues.length} provenance {result.issues.length === 1 ? 'note' : 'notes'}
+            {issues.length} provenance {issues.length === 1 ? 'note' : 'notes'}
           </summary>
           <ul>
-            {result.issues.map((issue, i) => (
+            {issues.map((issue, i) => (
               <li key={i}>{issue}</li>
             ))}
           </ul>
@@ -250,18 +252,23 @@ const ERROR_TITLES: Record<string, string> = {
 
 function ErrorBanner({ error }: { error: ApiError }) {
   const title = (error.code !== null && ERROR_TITLES[error.code]) || error.name;
+  const paths = error.missingPaths ?? [];
   return (
     <div className="error-banner">
       <div className="error-title">{title}</div>
-      <div className="error-message">{error.message}</div>
-      {error.missingPaths !== undefined && error.missingPaths.length > 0 && (
+      {/* For missing-fields errors the message just repeats the paths list. */}
+      {paths.length === 0 && <div className="error-message">{error.message}</div>}
+      {paths.length > 0 && (
         <ul className="error-paths">
-          {error.missingPaths.map((path) => (
+          {paths.map((path) => (
             <li key={path}>
               <code>{path}</code>
             </li>
           ))}
         </ul>
+      )}
+      {error.partial !== undefined && (
+        <div className="error-message">Everything that was extracted is shown below.</div>
       )}
     </div>
   );

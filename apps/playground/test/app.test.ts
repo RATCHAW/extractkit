@@ -2,7 +2,7 @@ import { describe, expect, it } from 'vitest';
 import type { ConfigResponse, ExtractEvent } from '../src/shared/api';
 import { createApp } from '../src/server/app';
 import { readSSE } from '../src/client/lib/sse';
-import { invoiceEnvelope, mockPlaygroundModel, tinyPng, unreadableEnvelope } from './helpers';
+import { invoiceEnvelope, missingTotalEnvelope, mockPlaygroundModel, tinyPng, unreadableEnvelope } from './helpers';
 
 function appWith(envelope: string) {
   return createApp({ models: [mockPlaygroundModel('mock-model', envelope)] });
@@ -103,6 +103,26 @@ describe('POST /api/extract', () => {
     const terminal = events.at(-1);
     if (terminal?.type !== 'error') throw new Error('expected an error event');
     expect(terminal.error.code).toBe('DOCUMENT_UNREADABLE');
+  });
+
+  it('carries the partial extraction on a missing-required-fields error', async () => {
+    const app = appWith(missingTotalEnvelope());
+    const res = await app.request('/api/extract', {
+      method: 'POST',
+      body: extractForm({ file: pngFile(), schema: 'invoice', model: 'mock-model' }),
+    });
+    const events = await collectEvents(res.body as ReadableStream<Uint8Array>);
+    const terminal = events.at(-1);
+    if (terminal?.type !== 'error') throw new Error('expected an error event');
+
+    expect(terminal.error.code).toBe('MISSING_REQUIRED_FIELDS');
+    expect(terminal.error.missingPaths).toEqual(['$.total']);
+    const partial = terminal.error.partial;
+    expect(partial).toBeDefined();
+    expect((partial?.data as { vendorName: string }).vendorName).toBe('Acme Corp');
+    const fields = partial?.fields as { vendorName: { bbox: { x0: number } } };
+    expect(fields.vendorName.bbox.x0).toBeCloseTo(0.08, 10);
+    expect(partial?.usage.modelCalls).toBeGreaterThan(0);
   });
 
   it('rejects an unknown schema id with 400', async () => {

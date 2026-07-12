@@ -64,6 +64,14 @@ const CATALOG: CatalogEntry[] = [
     pricing: { inputPerMTokUSD: 0.75, outputPerMTokUSD: 4.5 },
   },
   {
+    id: 'gemini-3.5-flash',
+    label: 'Gemini 3.5 Flash',
+    provider: 'google',
+    apiKeyEnv: 'GOOGLE_GENERATIVE_AI_API_KEY',
+    create: (id) => google(id),
+    pricing: { inputPerMTokUSD: 1.5, outputPerMTokUSD: 9 },
+  },
+  {
     id: 'gemini-2.5-flash',
     label: 'Gemini 2.5 Flash',
     provider: 'google',

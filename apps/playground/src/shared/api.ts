@@ -40,6 +40,14 @@ export interface SerializedResult {
   pages: number;
 }
 
+/** What was extracted despite a failed run, so the client can still show it. */
+export interface PartialResult {
+  data: unknown;
+  /** FieldMap of the extracted leaves; missing required fields are absent. */
+  fields: unknown;
+  usage: ExtractUsage;
+}
+
 /** A failed extraction, mapped from an extractkit or provider error. */
 export interface ApiError {
   /** Error class name, e.g. "DocumentError" or "MissingRequiredFieldsError". */
@@ -49,6 +57,8 @@ export interface ApiError {
   message: string;
   /** Set on MissingRequiredFieldsError. */
   missingPaths?: string[];
+  /** Set on MissingRequiredFieldsError: the rest of the extraction. */
+  partial?: PartialResult;
 }
 
 /**
