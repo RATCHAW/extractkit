@@ -1,5 +1,6 @@
 // Fetches the pinned benchmark data from its canonical hosts into .data/.
 // CORD-v2 (ungated) always; DocILE only when DOCILE_TOKEN is set.
+import '../src/env.js';
 import { spawn } from 'node:child_process';
 import { createWriteStream } from 'node:fs';
 import { access, mkdir, readFile, rm } from 'node:fs/promises';

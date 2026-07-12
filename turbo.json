@@ -1,0 +1,35 @@
+{
+  "$schema": "https://turbo.build/schema.json",
+  "globalDependencies": [".env", "tsconfig.base.json"],
+  "tasks": {
+    "build": {
+      "dependsOn": ["^build"],
+      "outputs": ["dist/**"]
+    },
+    "typecheck": {
+      "dependsOn": ["^build"]
+    },
+    "test": {
+      "dependsOn": ["^build"]
+    },
+    "dev": {
+      "dependsOn": ["^build"],
+      "persistent": true,
+      "cache": false
+    },
+    "run-eval": {
+      "dependsOn": ["^build"],
+      "cache": false
+    },
+    "report": {
+      "dependsOn": ["^build"],
+      "cache": false
+    },
+    "fetch-data": {
+      "cache": false
+    },
+    "pin": {
+      "cache": false
+    }
+  }
+}

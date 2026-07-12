@@ -1,6 +1,7 @@
 // Curates the benchmark selection and writes data/manifest.json.
 // Deterministic: same source data in, same manifest out. Documents whose
 // ground truth cannot be mapped confidently are skipped, never mis-scored.
+import '../src/env.js';
 import { access, mkdir, readFile, writeFile } from 'node:fs/promises';
 import { dirname, join } from 'node:path';
 import { cordToGroundTruth, CordMappingError } from '../src/datasets/cord.js';

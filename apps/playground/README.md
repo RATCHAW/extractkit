@@ -6,31 +6,30 @@ page. A Vite + React client talks to a small Hono API that runs `extractkit` aga
 
 ## Run it
 
-From the repo root (the core library must be built once so the server can import it):
+From the repo root — Turbo builds the core library first, so no manual build step is needed:
 
 ```sh
 pnpm install
-pnpm --filter @ratchaw/extractkit build
+cp .env.example .env   # set at least one provider key (see below)
+pnpm dev               # Hono API on :8787 + Vite client on :5173 (open this)
 ```
 
-Set at least one provider key — copy `.env.example` to `.env` and fill one in, or export it:
+Provider keys live in the single root `.env` (git-ignored), shared with the eval harness. Anything
+already exported in your shell wins over the file:
 
 ```sh
-# .env  (git-ignored)
+# .env  (repo root, git-ignored)
 ANTHROPIC_API_KEY=sk-ant-...
 # or OPENAI_API_KEY=... / GOOGLE_GENERATIVE_AI_API_KEY=...
-```
-
-Then, from `apps/playground`:
-
-```sh
-pnpm dev      # Hono API on :8787 + Vite client on :5173 (open this)
+PORT=8787                 # the Vite dev server reads this to proxy /api
 ```
 
 The client offers whichever models have a key set. With no key, the UI loads but extraction is
 disabled and tells you which variable to set.
 
 ### Production preview
+
+Run these from `apps/playground` (or `pnpm --filter @extractkit/playground <script>` from the root):
 
 ```sh
 pnpm build    # bundles the client to dist/client
