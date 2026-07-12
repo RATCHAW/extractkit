@@ -8,6 +8,8 @@
     "url": "git+https://github.com/RATCHAW/extractkit.git",
     "directory": "packages/core"
   },
+  "homepage": "https://github.com/RATCHAW/extractkit#readme",
+  "bugs": "https://github.com/RATCHAW/extractkit/issues",
   "keywords": [
     "document-extraction",
     "ocr",

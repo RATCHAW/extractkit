@@ -30,9 +30,9 @@ Live-provider path validated via the playground and the first Phase 2 eval run (
 
 ## Phase 4 — Release
 
-- [ ] README final: pitch, benchmark table, demo GIF, quickstart
-- [ ] MIT license
-- [ ] Publish `extractkit` to npm
+- [x] README final: pitch, benchmark table, demo GIF, quickstart
+- [x] MIT license (repo root + shipped in the npm package)
+- [ ] Publish `extractkit` to npm — package is publish-ready (tarball verified: dist + README + LICENSE, 13.5 kB); blocked on `npm login`, then `pnpm --filter extractkit publish` (human action)
 
 ## Non-goals for v1
 

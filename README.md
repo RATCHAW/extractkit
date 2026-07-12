@@ -4,7 +4,39 @@
 
 **Extraction you can audit.** Define a Zod schema, feed it a PDF or image, get back schema-validated JSON where every field carries provenance — the page and bounding box it came from — plus a confidence score.
 
-> **Status: in development.** The core library ([`packages/core`](./packages/core)), the eval harness ([`packages/evals`](./packages/evals)), and the playground ([`apps/playground`](./apps/playground)) are implemented and tested. The first live provider runs are in — the OpenAI lineup plus Google's `gemini-3.5-flash` across the CORD-v2 receipt set — validating core's live path and publishing the [benchmark](#benchmark) below. Still open: the Anthropic lineup and the rest of the Gemini tiers, the DocILE invoice half (blocked on a dataset token), and the demo GIF. See [ROADMAP.md](./ROADMAP.md).
+> **Status: v0.1.** The core library ([`packages/core`](./packages/core)), the eval harness ([`packages/evals`](./packages/evals)), and the playground ([`apps/playground`](./apps/playground)) are implemented and tested, and the [benchmark](#benchmark) below is generated from recorded live runs — the OpenAI lineup plus Google's `gemini-3.5-flash` on the CORD-v2 receipt set. Still to come: the Anthropic lineup and the rest of the Gemini tiers, and the DocILE invoice half of the benchmark (blocked on a dataset token). See [ROADMAP.md](./ROADMAP.md).
+
+## Quickstart
+
+```sh
+npm install extractkit ai zod
+```
+
+`ai` (Vercel AI SDK v7) and `zod` (v4) are peer dependencies. Bring any AI SDK provider — `@ai-sdk/anthropic`, `@ai-sdk/openai`, `@ai-sdk/google`, … — and pass its model to `extract`:
+
+```ts
+import { anthropic } from '@ai-sdk/anthropic';
+import { extract } from 'extractkit';
+import { readFile } from 'node:fs/promises';
+import { z } from 'zod';
+
+const invoice = z.object({
+  vendor: z.string().describe('Legal name of the issuing company'),
+  invoiceNumber: z.string(),
+  total: z.number(),
+});
+
+const result = await extract({
+  schema: invoice,
+  document: { data: await readFile('invoice.pdf') },
+  model: anthropic('claude-sonnet-5'),
+});
+
+result.data.total;   // 1250.5 — validated against the schema
+result.fields.total; // { value: 1250.5, confidence: 0.97, page: 0, bbox: { x0: 0.72, y0: 0.81, x1: 0.9, y1: 0.84 } }
+```
+
+Streaming, typed failure handling, repair retries, and cost tracking are covered in the [core library docs](./packages/core/README.md).
 
 ## Why
 
