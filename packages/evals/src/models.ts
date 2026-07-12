@@ -23,8 +23,8 @@ interface ProviderSpec {
 }
 
 /**
- * The benchmark lineup: three tiers per provider (flagship → cost-efficient),
- * all vision-capable so they accept the receipt/invoice image and PDF inputs.
+ * The benchmark lineup: vision-capable tiers per provider (flagship →
+ * cost-efficient) so they accept the receipt/invoice image and PDF inputs.
  * Pricing is the standard per-MTok list price from each provider's public
  * pricing page as of 2026-07 (sourced inline). Published cost numbers use the
  * durable list price, not promotional rates, so they don't expire.
@@ -55,6 +55,7 @@ const CATALOG: Record<Provider, ProviderSpec> = {
     apiKeyEnv: 'GOOGLE_GENERATIVE_AI_API_KEY',
     create: (id) => google(id),
     models: [
+      { name: 'gemini-3.5-flash', pricing: { inputPerMTokUSD: 1.5, outputPerMTokUSD: 9 } },
       { name: 'gemini-2.5-pro', pricing: { inputPerMTokUSD: 1.25, outputPerMTokUSD: 10 } },
       { name: 'gemini-2.5-flash', pricing: { inputPerMTokUSD: 0.3, outputPerMTokUSD: 2.5 } },
       { name: 'gemini-2.5-flash-lite', pricing: { inputPerMTokUSD: 0.1, outputPerMTokUSD: 0.4 } },
@@ -114,10 +115,40 @@ export function selectProviders(env: NodeJS.ProcessEnv = process.env): Provider[
   return available;
 }
 
-/** The models to run this benchmark, resolved from the selected providers. */
+function parseModelFilter(raw: string): string[] {
+  const names = raw.split(/[,\s]+/).filter((s) => s.length > 0);
+  const selected: string[] = [];
+  for (const name of names) {
+    if (!selected.includes(name)) selected.push(name);
+  }
+  return selected;
+}
+
+/**
+ * The models to run this benchmark, resolved from the selected providers.
+ * `EVAL_MODELS` narrows the lineup to specific models by name (comma-separated,
+ * e.g. `gemini-3.5-flash`); every named model must belong to a selected
+ * provider. When unset (or blank) all of the selected providers' models run.
+ * A model name that resolves to a provider without an API key never appears in
+ * the available set, so filtering to it is rejected with a clear error.
+ */
 export function benchmarkModels(env: NodeJS.ProcessEnv = process.env): EvalModel[] {
-  return selectProviders(env).flatMap((provider) => {
+  const models = selectProviders(env).flatMap((provider) => {
     const spec = CATALOG[provider];
     return spec.models.map((m) => ({ name: m.name, model: spec.create(m.name), pricing: m.pricing }));
   });
+
+  const raw = env['EVAL_MODELS'];
+  if (raw === undefined || raw.trim() === '') return models;
+
+  const requested = parseModelFilter(raw);
+  const available = new Set(models.map((m) => m.name));
+  const missing = requested.filter((name) => !available.has(name));
+  if (missing.length > 0) {
+    throw new Error(
+      `EVAL_MODELS names model(s) not available from the selected providers: ${missing.join(', ')}. ` +
+        `Available: ${[...available].join(', ')}.`,
+    );
+  }
+  return models.filter((m) => requested.includes(m.name));
 }

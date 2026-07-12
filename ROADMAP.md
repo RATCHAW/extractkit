@@ -19,7 +19,7 @@ Live-provider path validated via the playground and the first Phase 2 eval run (
 - [x] Harness: accuracy per field per model, grounding accuracy (predicted vs. ground-truth bbox), cost per 1k docs — tested against mock models; report generation from recorded runs
 - [x] Receipt half pinned: 25 CORD-v2 test docs curated by mapping-consistency checks, pinned by id + SHA-256 in `packages/evals/data/manifest.json`
 - [ ] Invoice half pinned: blocked on the DocILE token (Phase 0 human action); curation script is ready
-- [x] First live eval run — OpenAI lineup on the CORD-v2 receipt set (2026-07-12); benchmark page + README table generated from the recorded run. Anthropic and Gemini lineups, and the DocILE invoice half (>90% field-accuracy engineering target), still to run.
+- [x] First live eval runs — OpenAI lineup + Google `gemini-3.5-flash` on the CORD-v2 receipt set (2026-07-12); benchmark page + README table generated from the recorded runs. The Anthropic lineup, the rest of the Gemini tiers, and the DocILE invoice half (>90% field-accuracy engineering target), still to run.
 - [x] Benchmark table in README, filled by `pnpm report` from the recorded run
 
 ## Phase 3 — Playground (`apps/playground`)

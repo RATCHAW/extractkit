@@ -4,7 +4,7 @@
 
 **Extraction you can audit.** Define a Zod schema, feed it a PDF or image, get back schema-validated JSON where every field carries provenance — the page and bounding box it came from — plus a confidence score.
 
-> **Status: in development.** The core library ([`packages/core`](./packages/core)), the eval harness ([`packages/evals`](./packages/evals)), and the playground ([`apps/playground`](./apps/playground)) are implemented and tested. The first live provider run is in — the OpenAI lineup across the CORD-v2 receipt set — validating core's live path and publishing the [benchmark](#benchmark) below. Still open: the Anthropic and Gemini lineups, the DocILE invoice half (blocked on a dataset token), and the demo GIF. See [ROADMAP.md](./ROADMAP.md).
+> **Status: in development.** The core library ([`packages/core`](./packages/core)), the eval harness ([`packages/evals`](./packages/evals)), and the playground ([`apps/playground`](./apps/playground)) are implemented and tested. The first live provider runs are in — the OpenAI lineup plus Google's `gemini-3.5-flash` across the CORD-v2 receipt set — validating core's live path and publishing the [benchmark](#benchmark) below. Still open: the Anthropic lineup and the rest of the Gemini tiers, the DocILE invoice half (blocked on a dataset token), and the demo GIF. See [ROADMAP.md](./ROADMAP.md).
 
 ## Why
 
@@ -29,6 +29,7 @@ See [ROADMAP.md](./ROADMAP.md) for the build plan.
 | gpt-5.6-sol | 25 | 94.1% | 82.5% | 66.5% | $57.99 |
 | gpt-5.6-luna | 25 | 88.0% | 51.8% | 46.8% | $11.91 |
 | gpt-5.4-mini | 25 | 84.7% | 0.4% | 1.4% | $4.77 |
+| gemini-3.5-flash | 25 (1 failed) | 96.3% | 82.6% | 66.4% | $27.19 |
 
 <!-- benchmark:end -->
 
