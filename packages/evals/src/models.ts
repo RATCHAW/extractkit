@@ -2,7 +2,7 @@ import { anthropic } from '@ai-sdk/anthropic';
 import { google } from '@ai-sdk/google';
 import { openai } from '@ai-sdk/openai';
 import type { LanguageModel } from 'ai';
-import type { Pricing } from 'extractkit';
+import type { Pricing } from '@ratchaw/extractkit';
 import type { EvalModel } from './types.js';
 
 export type Provider = 'anthropic' | 'openai' | 'google';

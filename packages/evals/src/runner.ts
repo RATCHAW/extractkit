@@ -1,5 +1,5 @@
-import { extract, ExtractKitError, MissingRequiredFieldsError } from 'extractkit';
-import type { ExtractUsage } from 'extractkit';
+import { extract, ExtractKitError, MissingRequiredFieldsError } from '@ratchaw/extractkit';
+import type { ExtractUsage } from '@ratchaw/extractkit';
 import { scoreExtraction, scoreFailure } from './metrics.js';
 import { schemas } from './schemas.js';
 import type { DocResult, EvalDocument, EvalModel, ModelRun } from './types.js';

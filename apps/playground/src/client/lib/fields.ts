@@ -1,4 +1,4 @@
-import type { ExtractedField, FieldPath } from 'extractkit';
+import type { ExtractedField, FieldPath } from '@ratchaw/extractkit';
 
 export type AnyField = ExtractedField<unknown>;
 

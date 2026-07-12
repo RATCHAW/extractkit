@@ -1,5 +1,5 @@
 import { asyncBufferFromFile, parquetMetadataAsync, parquetReadObjects } from 'hyparquet';
-import { sniffMediaType } from 'extractkit';
+import { sniffMediaType } from '@ratchaw/extractkit';
 import { sha256Hex, type CordPin, type Manifest } from '../manifest.js';
 import { cordToGroundTruth, type CordGroundTruth } from './cord.js';
 import type { EvalDocument } from '../types.js';

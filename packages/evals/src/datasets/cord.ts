@@ -1,4 +1,4 @@
-import type { BBox } from 'extractkit';
+import type { BBox } from '@ratchaw/extractkit';
 import { valuesMatch } from '../normalize.js';
 import type { CompareKind, GroundTruthField, GroundTruthRegion } from '../types.js';
 

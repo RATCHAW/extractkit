@@ -1,4 +1,4 @@
-import type { ExtractedField, ExtractUsage, FieldPath } from 'extractkit';
+import type { ExtractedField, ExtractUsage, FieldPath } from '@ratchaw/extractkit';
 
 /** A single extracted leaf with its provenance, as sent over the wire. */
 export type WireField = ExtractedField<unknown>;

@@ -22,12 +22,12 @@ importers:
       '@hono/node-server':
         specifier: ^2.0.8
         version: 2.0.8(hono@4.12.29)
+      '@ratchaw/extractkit':
+        specifier: workspace:*
+        version: link:../../packages/core
       ai:
         specifier: ^7.0.16
         version: 7.0.16(zod@4.4.3)
-      extractkit:
-        specifier: workspace:*
-        version: link:../../packages/core
       hono:
         specifier: ^4.12.29
         version: 4.12.29
@@ -108,12 +108,12 @@ importers:
       '@ai-sdk/openai':
         specifier: ^4.0.11
         version: 4.0.11(zod@4.4.3)
+      '@ratchaw/extractkit':
+        specifier: workspace:*
+        version: link:../core
       ai:
         specifier: ^7.0.16
         version: 7.0.16(zod@4.4.3)
-      extractkit:
-        specifier: workspace:*
-        version: link:../core
       hyparquet:
         specifier: ^1.14.0
         version: 1.26.2

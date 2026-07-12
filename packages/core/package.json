@@ -1,5 +1,8 @@
 {
-  "name": "extractkit",
+  "name": "@ratchaw/extractkit",
+  "publishConfig": {
+    "access": "public"
+  },
   "version": "0.1.0",
   "description": "Schema-first document extraction with per-field provenance: Zod schema + PDF/image in, validated JSON with page, bbox, and confidence out.",
   "license": "MIT",

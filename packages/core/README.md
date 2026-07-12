@@ -7,7 +7,7 @@
 ## Install
 
 ```sh
-npm install extractkit ai zod
+npm install @ratchaw/extractkit ai zod
 ```
 
 `ai` (Vercel AI SDK v7) and `zod` (v4) are peer dependencies. Bring any AI SDK provider — e.g. `@ai-sdk/anthropic`, `@ai-sdk/openai`, or `@ai-sdk/google` — and pass its model to `extract`.
@@ -16,7 +16,7 @@ npm install extractkit ai zod
 
 ```ts
 import { anthropic } from '@ai-sdk/anthropic';
-import { extract } from 'extractkit';
+import { extract } from '@ratchaw/extractkit';
 import { readFile } from 'node:fs/promises';
 import { z } from 'zod';
 
@@ -57,7 +57,7 @@ Every leaf of your schema comes back twice: the plain value in `data` (validated
 ## Streaming
 
 ```ts
-import { streamExtract } from 'extractkit';
+import { streamExtract } from '@ratchaw/extractkit';
 
 const stream = streamExtract({ schema: invoice, document, model });
 

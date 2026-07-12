@@ -1,5 +1,5 @@
-import { ExtractKitError, MissingRequiredFieldsError, streamExtract } from 'extractkit';
-import type { ExtractResult } from 'extractkit';
+import { ExtractKitError, MissingRequiredFieldsError, streamExtract } from '@ratchaw/extractkit';
+import type { ExtractResult } from '@ratchaw/extractkit';
 import { Hono } from 'hono';
 import { bodyLimit } from 'hono/body-limit';
 import { streamSSE } from 'hono/streaming';

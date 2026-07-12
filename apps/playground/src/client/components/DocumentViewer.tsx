@@ -3,7 +3,7 @@ import type { DragEvent } from 'react';
 import { GlobalWorkerOptions, Util, getDocument } from 'pdfjs-dist';
 import type { PDFDocumentLoadingTask, PDFPageProxy } from 'pdfjs-dist';
 import workerSrc from 'pdfjs-dist/build/pdf.worker.min.mjs?url';
-import type { BBox as BBoxRect } from 'extractkit';
+import type { BBox as BBoxRect } from '@ratchaw/extractkit';
 import type { FieldEntry } from '../lib/fields';
 import { formatPath, formatValue } from '../lib/fields';
 import { bboxToStyle } from '../lib/geometry';

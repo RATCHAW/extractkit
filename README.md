@@ -9,14 +9,14 @@
 ## Quickstart
 
 ```sh
-npm install extractkit ai zod
+npm install @ratchaw/extractkit ai zod
 ```
 
 `ai` (Vercel AI SDK v7) and `zod` (v4) are peer dependencies. Bring any AI SDK provider — `@ai-sdk/anthropic`, `@ai-sdk/openai`, `@ai-sdk/google`, … — and pass its model to `extract`:
 
 ```ts
 import { anthropic } from '@ai-sdk/anthropic';
-import { extract } from 'extractkit';
+import { extract } from '@ratchaw/extractkit';
 import { readFile } from 'node:fs/promises';
 import { z } from 'zod';
 

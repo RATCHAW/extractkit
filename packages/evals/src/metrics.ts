@@ -1,4 +1,4 @@
-import type { BBox, ExtractedField } from 'extractkit';
+import type { BBox, ExtractedField } from '@ratchaw/extractkit';
 import { valuesMatch } from './normalize.js';
 import type { DocResult, EvalDocument, FieldResult, GroundTruthField, ModelRun, SchemaId } from './types.js';
 

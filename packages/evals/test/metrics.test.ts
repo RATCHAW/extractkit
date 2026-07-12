@@ -1,4 +1,4 @@
-import type { ExtractedField } from 'extractkit';
+import type { ExtractedField } from '@ratchaw/extractkit';
 import { describe, expect, it } from 'vitest';
 import { iou, scoreExtraction, scoreFailure, summarizeRun } from '../src/metrics.js';
 import type { EvalDocument, GroundTruthField, ModelRun } from '../src/types.js';

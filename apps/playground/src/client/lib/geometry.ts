@@ -1,4 +1,4 @@
-import type { BBox } from 'extractkit';
+import type { BBox } from '@ratchaw/extractkit';
 
 export interface BoxStyle {
   left: string;

@@ -1,4 +1,4 @@
-import type { BBox, Pricing, SupportedMediaType } from 'extractkit';
+import type { BBox, Pricing, SupportedMediaType } from '@ratchaw/extractkit';
 import type { LanguageModel } from 'ai';
 
 export type DatasetId = 'cord' | 'docile';

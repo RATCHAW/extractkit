@@ -22,7 +22,7 @@
     "@ai-sdk/openai": "^4.0.11",
     "@hono/node-server": "^2.0.8",
     "ai": "^7.0.16",
-    "extractkit": "workspace:*",
+    "@ratchaw/extractkit": "workspace:*",
     "hono": "^4.12.29",
     "pdfjs-dist": "^6.1.200",
     "react": "^19.2.7",

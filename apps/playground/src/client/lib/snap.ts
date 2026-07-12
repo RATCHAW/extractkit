@@ -1,4 +1,4 @@
-import type { BBox } from 'extractkit';
+import type { BBox } from '@ratchaw/extractkit';
 
 /** A positioned text run from the PDF text layer, normalized 0–1, origin top-left. */
 export interface TextSpan {

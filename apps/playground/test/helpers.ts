@@ -1,6 +1,6 @@
 import { MockLanguageModelV4, simulateReadableStream } from 'ai/test';
 import type { LanguageModel } from 'ai';
-import type { Pricing } from 'extractkit';
+import type { Pricing } from '@ratchaw/extractkit';
 import type { PlaygroundModel } from '../src/server/models';
 
 /** A 12-byte buffer with a valid PNG signature — enough for normalizeDocument. */

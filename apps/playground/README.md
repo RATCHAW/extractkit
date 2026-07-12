@@ -10,7 +10,7 @@ From the repo root (the core library must be built once so the server can import
 
 ```sh
 pnpm install
-pnpm --filter extractkit build
+pnpm --filter @ratchaw/extractkit build
 ```
 
 Set at least one provider key — copy `.env.example` to `.env` and fill one in, or export it:

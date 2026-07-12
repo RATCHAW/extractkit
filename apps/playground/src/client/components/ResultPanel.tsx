@@ -2,7 +2,7 @@ import type { ApiError, SerializedResult } from '../../shared/api';
 import type { Phase } from '../App';
 import type { AnyField, FieldEntry } from '../lib/fields';
 import { formatPath, formatValue, isField, leafLabel, pathKey } from '../lib/fields';
-import type { FieldPath } from 'extractkit';
+import type { FieldPath } from '@ratchaw/extractkit';
 
 interface ResultPanelProps {
   phase: Phase;
