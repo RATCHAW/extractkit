@@ -31,6 +31,23 @@ describe('selectProviders', () => {
   it('throws when no provider key is set at all', () => {
     expect(() => selectProviders({})).toThrow(/No provider API key found/);
   });
+
+  it('treats a blank key value as absent, like the playground', () => {
+    expect(selectProviders({ ANTHROPIC_API_KEY: '', ...OPENAI })).toEqual(['openai']);
+    expect(() => selectProviders({ ANTHROPIC_API_KEY: '', OPENAI_API_KEY: '' })).toThrow(
+      /No provider API key found/,
+    );
+  });
+
+  it('rejects an explicitly selected provider whose key is blank', () => {
+    expect(() => selectProviders({ EVAL_PROVIDERS: 'anthropic', ANTHROPIC_API_KEY: '' })).toThrow(
+      /ANTHROPIC_API_KEY/,
+    );
+  });
+
+  it('falls back to key auto-detection when EVAL_PROVIDERS is blank', () => {
+    expect(selectProviders({ EVAL_PROVIDERS: '  ', ...GOOGLE })).toEqual(['google']);
+  });
 });
 
 describe('benchmarkModels', () => {
