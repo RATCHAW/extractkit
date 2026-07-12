@@ -104,14 +104,15 @@ export function App() {
     }
   }, [file, modelId, schemaId]);
 
-  const entries = useMemo<FieldEntry[]>(
-    () => (run.result !== null ? fieldEntries(run.result.fields) : run.live),
-    [run.result, run.live],
-  );
-  const boxes = useMemo(
-    () => entries.filter((e) => e.field.bbox !== null && e.field.page !== null),
-    [entries],
-  );
+  const entries = useMemo<FieldEntry[]>(() => {
+    if (run.result !== null) return fieldEntries(run.result.fields);
+    // A failed run may still carry a partial extraction worth showing.
+    if (run.error?.partial !== undefined) return fieldEntries(run.error.partial.fields);
+    return run.live;
+  }, [run.result, run.error, run.live]);
+  // Include fields without model provenance: the PDF viewer can still locate
+  // their values in the page text layer. Value-less fields have nothing to find.
+  const boxes = useMemo(() => entries.filter((e) => e.field.value !== null), [entries]);
 
   return (
     <div className="app">
