@@ -26,7 +26,7 @@ Live-provider path validated via the playground and the first Phase 2 eval run (
 
 - [x] Hono API + Vite/React client — `GET /api/config`, `POST /api/extract` streamed as SSE; routes tested against a mock model
 - [x] Drag-drop extraction with hover-field → highlight-source-bbox interaction (images + PDFs via pdfjs)
-- [ ] Demo GIF for the README (needs one live run — same provider key as the Phase 2 first run)
+- [x] Demo GIF for the README (`docs/demo.gif`, captured from a live playground run)
 
 ## Phase 4 — Release
 
