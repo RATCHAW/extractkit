@@ -1,0 +1,4499 @@
+{
+  "startedAt": "2026-07-12T17:40:57.702Z",
+  "manifestChecksum": "3fcd95f11b94a49078731a6285f0024a8fa2a583ca49102b88efdd0a4c9d59d6",
+  "runs": [
+    {
+      "model": "gemini-3.5-flash",
+      "docs": [
+        {
+          "docId": "cord/test/0",
+          "dataset": "cord",
+          "schema": "receipt",
+          "error": null,
+          "fields": [
+            {
+              "path": "lineItems.0.description",
+              "compare": "text",
+              "expected": "-TICKET CP",
+              "predicted": "-TICKET CP",
+              "valueCorrect": true,
+              "iou": 0.7498746219662319,
+              "predictedPage": 0
+            },
+            {
+              "path": "lineItems.0.quantity",
+              "compare": "count",
+              "expected": "2",
+              "predicted": "2",
+              "valueCorrect": true,
+              "iou": 0.3526645768025076,
+              "predictedPage": 0
+            },
+            {
+              "path": "lineItems.0.unitPrice",
+              "compare": "money",
+              "expected": null,
+              "predicted": "60.000",
+              "valueCorrect": false,
+              "iou": null,
+              "predictedPage": 0
+            },
+            {
+              "path": "lineItems.0.amount",
+              "compare": "money",
+              "expected": "60.000",
+              "predicted": "60.000",
+              "valueCorrect": true,
+              "iou": 0,
+              "predictedPage": 0
+            },
+            {
+              "path": "subtotal",
+              "compare": "money",
+              "expected": "60.000",
+              "predicted": "60.000",
+              "valueCorrect": true,
+              "iou": 0.6566011640638522,
+              "predictedPage": 0
+            },
+            {
+              "path": "discount",
+              "compare": "money",
+              "expected": "-60.000",
+              "predicted": "-60.000",
+              "valueCorrect": true,
+              "iou": 0.7366736842105289,
+              "predictedPage": 0
+            },
+            {
+              "path": "serviceCharge",
+              "compare": "money",
+              "expected": null,
+              "predicted": null,
+              "valueCorrect": true,
+              "iou": null,
+              "predictedPage": null
+            },
+            {
+              "path": "tax",
+              "compare": "money",
+              "expected": "5.455",
+              "predicted": "5.455",
+              "valueCorrect": true,
+              "iou": 0.5975531817766827,
+              "predictedPage": 0
+            },
+            {
+              "path": "total",
+              "compare": "money",
+              "expected": "60.000",
+              "predicted": "60.000",
+              "valueCorrect": true,
+              "iou": 0.8462938607743644,
+              "predictedPage": 0
+            }
+          ],
+          "extraLineItems": 0,
+          "usage": {
+            "inputTokens": 1450,
+            "outputTokens": 2996,
+            "modelCalls": 1,
+            "costUSD": 0.029139
+          }
+        },
+        {
+          "docId": "cord/test/1",
+          "dataset": "cord",
+          "schema": "receipt",
+          "error": null,
+          "fields": [
+            {
+              "path": "lineItems.0.description",
+              "compare": "text",
+              "expected": "J.STB PROMO",
+              "predicted": "J.STB PROMO",
+              "valueCorrect": true,
+              "iou": 0.841662283008945,
+              "predictedPage": 0
+            },
+            {
+              "path": "lineItems.0.quantity",
+              "compare": "count",
+              "expected": null,
+              "predicted": null,
+              "valueCorrect": true,
+              "iou": null,
+              "predictedPage": null
+            },
+            {
+              "path": "lineItems.0.unitPrice",
+              "compare": "money",
+              "expected": null,
+              "predicted": null,
+              "valueCorrect": true,
+              "iou": null,
+              "predictedPage": null
+            },
+            {
+              "path": "lineItems.0.amount",
+              "compare": "money",
+              "expected": "17500",
+              "predicted": "17500",
+              "valueCorrect": true,
+              "iou": 0.7143064523621506,
+              "predictedPage": 0
+            },
+            {
+              "path": "lineItems.1.description",
+              "compare": "text",
+              "expected": "Y.B.BAT",
+              "predicted": "Y.B.BAT",
+              "valueCorrect": true,
+              "iou": 0.7758315654331829,
+              "predictedPage": 0
+            },
+            {
+              "path": "lineItems.1.quantity",
+              "compare": "count",
+              "expected": null,
+              "predicted": null,
+              "valueCorrect": true,
+              "iou": null,
+              "predictedPage": null
+            },
+            {
+              "path": "lineItems.1.unitPrice",
+              "compare": "money",
+              "expected": null,
+              "predicted": null,
+              "valueCorrect": true,
+              "iou": null,
+              "predictedPage": null
+            },
+            {
+              "path": "lineItems.1.amount",
+              "compare": "money",
+              "expected": "46000",
+              "predicted": "46000",
+              "valueCorrect": true,
+              "iou": 0.7311062431544361,
+              "predictedPage": 0
+            },
+            {
+              "path": "lineItems.2.description",
+              "compare": "text",
+              "expected": "Y.BASO PROM",
+              "predicted": "Y.BASO PROM",
+              "valueCorrect": true,
+              "iou": 0.7832509047489193,
+              "predictedPage": 0
+            },
+            {
+              "path": "lineItems.2.quantity",
+              "compare": "count",
+              "expected": null,
+              "predicted": null,
+              "valueCorrect": true,
+              "iou": null,
+              "predictedPage": null
+            },
+            {
+              "path": "lineItems.2.unitPrice",
+              "compare": "money",
+              "expected": null,
+              "predicted": null,
+              "valueCorrect": true,
+              "iou": null,
+              "predictedPage": null
+            },
+            {
+              "path": "lineItems.2.amount",
+              "compare": "money",
+              "expected": "27500",
+              "predicted": "27500",
+              "valueCorrect": true,
+              "iou": 0.7487991929659652,
+              "predictedPage": 0
+            },
+            {
+              "path": "subtotal",
+              "compare": "money",
+              "expected": null,
+              "predicted": null,
+              "valueCorrect": true,
+              "iou": null,
+              "predictedPage": null
+            },
+            {
+              "path": "discount",
+              "compare": "money",
+              "expected": null,
+              "predicted": null,
+              "valueCorrect": true,
+              "iou": null,
+              "predictedPage": null
+            },
+            {
+              "path": "serviceCharge",
+              "compare": "money",
+              "expected": null,
+              "predicted": null,
+              "valueCorrect": true,
+              "iou": null,
+              "predictedPage": null
+            },
+            {
+              "path": "tax",
+              "compare": "money",
+              "expected": null,
+              "predicted": null,
+              "valueCorrect": true,
+              "iou": null,
+              "predictedPage": null
+            },
+            {
+              "path": "total",
+              "compare": "money",
+              "expected": "91000",
+              "predicted": "91000",
+              "valueCorrect": true,
+              "iou": 0.7747671698446341,
+              "predictedPage": 0
+            }
+          ],
+          "extraLineItems": 0,
+          "usage": {
+            "inputTokens": 1434,
+            "outputTokens": 2443,
+            "modelCalls": 1,
+            "costUSD": 0.024138
+          }
+        },
+        {
+          "docId": "cord/test/2",
+          "dataset": "cord",
+          "schema": "receipt",
+          "error": null,
+          "fields": [
+            {
+              "path": "lineItems.0.description",
+              "compare": "text",
+              "expected": "JASMINE MT ( L )",
+              "predicted": "JASMINE MT ( L )",
+              "valueCorrect": true,
+              "iou": 0.8282799440559455,
+              "predictedPage": 0
+            },
+            {
+              "path": "lineItems.0.quantity",
+              "compare": "count",
+              "expected": "1",
+              "predicted": "1",
+              "valueCorrect": true,
+              "iou": 0.7054872855578541,
+              "predictedPage": 0
+            },
+            {
+              "path": "lineItems.0.unitPrice",
+              "compare": "money",
+              "expected": null,
+              "predicted": null,
+              "valueCorrect": true,
+              "iou": null,
+              "predictedPage": null
+            },
+            {
+              "path": "lineItems.0.amount",
+              "compare": "money",
+              "expected": "24,000",
+              "predicted": "24,000",
+              "valueCorrect": true,
+              "iou": 0.8410375865182188,
+              "predictedPage": 0
+            },
+            {
+              "path": "lineItems.1.description",
+              "compare": "text",
+              "expected": "COCONUT JELLY ( L )",
+              "predicted": "COCONUT JELLY ( L )",
+              "valueCorrect": true,
+              "iou": 0.7974039014778336,
+              "predictedPage": 0
+            },
+            {
+              "path": "lineItems.1.quantity",
+              "compare": "count",
+              "expected": null,
+              "predicted": null,
+              "valueCorrect": true,
+              "iou": null,
+              "predictedPage": null
+            },
+            {
+              "path": "lineItems.1.unitPrice",
+              "compare": "money",
+              "expected": null,
+              "predicted": null,
+              "valueCorrect": true,
+              "iou": null,
+              "predictedPage": null
+            },
+            {
+              "path": "lineItems.1.amount",
+              "compare": "money",
+              "expected": "4,000",
+              "predicted": "4,000",
+              "valueCorrect": true,
+              "iou": 0.7004335573722983,
+              "predictedPage": 0
+            },
+            {
+              "path": "subtotal",
+              "compare": "money",
+              "expected": "28,000",
+              "predicted": "28,000",
+              "valueCorrect": true,
+              "iou": 0.8008979768339737,
+              "predictedPage": 0
+            },
+            {
+              "path": "discount",
+              "compare": "money",
+              "expected": null,
+              "predicted": null,
+              "valueCorrect": true,
+              "iou": null,
+              "predictedPage": null
+            },
+            {
+              "path": "serviceCharge",
+              "compare": "money",
+              "expected": null,
+              "predicted": null,
+              "valueCorrect": true,
+              "iou": null,
+              "predictedPage": null
+            },
+            {
+              "path": "tax",
+              "compare": "money",
+              "expected": null,
+              "predicted": null,
+              "valueCorrect": true,
+              "iou": null,
+              "predictedPage": null
+            },
+            {
+              "path": "total",
+              "compare": "money",
+              "expected": "28,000",
+              "predicted": "28,000",
+              "valueCorrect": true,
+              "iou": 0.8198125714285729,
+              "predictedPage": 0
+            }
+          ],
+          "extraLineItems": 0,
+          "usage": {
+            "inputTokens": 1450,
+            "outputTokens": 2010,
+            "modelCalls": 1,
+            "costUSD": 0.020265
+          }
+        },
+        {
+          "docId": "cord/test/3",
+          "dataset": "cord",
+          "schema": "receipt",
+          "error": null,
+          "fields": [
+            {
+              "path": "lineItems.0.description",
+              "compare": "text",
+              "expected": "DONAT GULA",
+              "predicted": "DONAT GULA",
+              "valueCorrect": true,
+              "iou": 0.8286780144578277,
+              "predictedPage": 0
+            },
+            {
+              "path": "lineItems.0.quantity",
+              "compare": "count",
+              "expected": "1X",
+              "predicted": "1X",
+              "valueCorrect": true,
+              "iou": 0.7888192473099784,
+              "predictedPage": 0
+            },
+            {
+              "path": "lineItems.0.unitPrice",
+              "compare": "money",
+              "expected": "@11000",
+              "predicted": "@11000",
+              "valueCorrect": true,
+              "iou": 0.7633603614617946,
+              "predictedPage": 0
+            },
+            {
+              "path": "lineItems.0.amount",
+              "compare": "money",
+              "expected": "11,000",
+              "predicted": "11,000",
+              "valueCorrect": true,
+              "iou": 0.8264791725138133,
+              "predictedPage": 0
+            },
+            {
+              "path": "subtotal",
+              "compare": "money",
+              "expected": "11,000",
+              "predicted": "11,000",
+              "valueCorrect": true,
+              "iou": 0.6823439999999995,
+              "predictedPage": 0
+            },
+            {
+              "path": "discount",
+              "compare": "money",
+              "expected": null,
+              "predicted": null,
+              "valueCorrect": true,
+              "iou": null,
+              "predictedPage": null
+            },
+            {
+              "path": "serviceCharge",
+              "compare": "money",
+              "expected": null,
+              "predicted": null,
+              "valueCorrect": true,
+              "iou": null,
+              "predictedPage": null
+            },
+            {
+              "path": "tax",
+              "compare": "money",
+              "expected": null,
+              "predicted": null,
+              "valueCorrect": true,
+              "iou": null,
+              "predictedPage": null
+            },
+            {
+              "path": "total",
+              "compare": "money",
+              "expected": "11,000",
+              "predicted": "11,000",
+              "valueCorrect": true,
+              "iou": 0.7513320509770602,
+              "predictedPage": 0
+            }
+          ],
+          "extraLineItems": 0,
+          "usage": {
+            "inputTokens": 1450,
+            "outputTokens": 1698,
+            "modelCalls": 1,
+            "costUSD": 0.017457
+          }
+        },
+        {
+          "docId": "cord/test/4",
+          "dataset": "cord",
+          "schema": "receipt",
+          "error": null,
+          "fields": [
+            {
+              "path": "lineItems.0.description",
+              "compare": "text",
+              "expected": "ICE BLACKCOFFE",
+              "predicted": "ICE BLACKCOFFE",
+              "valueCorrect": true,
+              "iou": 0.8714036014887446,
+              "predictedPage": 0
+            },
+            {
+              "path": "lineItems.0.quantity",
+              "compare": "count",
+              "expected": "2",
+              "predicted": "2",
+              "valueCorrect": true,
+              "iou": 0.7407962208937245,
+              "predictedPage": 0
+            },
+            {
+              "path": "lineItems.0.unitPrice",
+              "compare": "money",
+              "expected": null,
+              "predicted": null,
+              "valueCorrect": true,
+              "iou": null,
+              "predictedPage": null
+            },
+            {
+              "path": "lineItems.0.amount",
+              "compare": "money",
+              "expected": "82,000",
+              "predicted": "82,000",
+              "valueCorrect": true,
+              "iou": 0.731566141502699,
+              "predictedPage": 0
+            },
+            {
+              "path": "lineItems.1.description",
+              "compare": "text",
+              "expected": "AVOCADO COFFEE",
+              "predicted": "AVOCADO COFFEE",
+              "valueCorrect": true,
+              "iou": 0.9121751575239119,
+              "predictedPage": 0
+            },
+            {
+              "path": "lineItems.1.quantity",
+              "compare": "count",
+              "expected": "1",
+              "predicted": "1",
+              "valueCorrect": true,
+              "iou": 0.8116256580602109,
+              "predictedPage": 0
+            },
+            {
+              "path": "lineItems.1.unitPrice",
+              "compare": "money",
+              "expected": null,
+              "predicted": null,
+              "valueCorrect": true,
+              "iou": null,
+              "predictedPage": null
+            },
+            {
+              "path": "lineItems.1.amount",
+              "compare": "money",
+              "expected": "61,000",
+              "predicted": "61,000",
+              "valueCorrect": true,
+              "iou": 0.8137518071781576,
+              "predictedPage": 0
+            },
+            {
+              "path": "lineItems.2.description",
+              "compare": "text",
+              "expected": "CHIKEN KATSU FF",
+              "predicted": "CHIKEN KATSU FF",
+              "valueCorrect": true,
+              "iou": 0.8478747764451509,
+              "predictedPage": 0
+            },
+            {
+              "path": "lineItems.2.quantity",
+              "compare": "count",
+              "expected": "1",
+              "predicted": "1",
+              "valueCorrect": true,
+              "iou": 0.5130872717060075,
+              "predictedPage": 0
+            },
+            {
+              "path": "lineItems.2.unitPrice",
+              "compare": "money",
+              "expected": null,
+              "predicted": null,
+              "valueCorrect": true,
+              "iou": null,
+              "predictedPage": null
+            },
+            {
+              "path": "lineItems.2.amount",
+              "compare": "money",
+              "expected": "51,000",
+              "predicted": "51,000",
+              "valueCorrect": true,
+              "iou": 0.7829970183212137,
+              "predictedPage": 0
+            },
+            {
+              "path": "subtotal",
+              "compare": "money",
+              "expected": "194,000",
+              "predicted": "194,000",
+              "valueCorrect": true,
+              "iou": 0.7286548037036668,
+              "predictedPage": 0
+            },
+            {
+              "path": "discount",
+              "compare": "money",
+              "expected": "19,400",
+              "predicted": "19,400",
+              "valueCorrect": true,
+              "iou": 0.5999383024844989,
+              "predictedPage": 0
+            },
+            {
+              "path": "serviceCharge",
+              "compare": "money",
+              "expected": null,
+              "predicted": null,
+              "valueCorrect": true,
+              "iou": null,
+              "predictedPage": null
+            },
+            {
+              "path": "tax",
+              "compare": "money",
+              "expected": null,
+              "predicted": null,
+              "valueCorrect": true,
+              "iou": null,
+              "predictedPage": null
+            },
+            {
+              "path": "total",
+              "compare": "money",
+              "expected": "174,600",
+              "predicted": "174,600",
+              "valueCorrect": true,
+              "iou": 0.6763961794528648,
+              "predictedPage": 0
+            }
+          ],
+          "extraLineItems": 0,
+          "usage": {
+            "inputTokens": 1450,
+            "outputTokens": 2768,
+            "modelCalls": 1,
+            "costUSD": 0.027087
+          }
+        },
+        {
+          "docId": "cord/test/5",
+          "dataset": "cord",
+          "schema": "receipt",
+          "error": null,
+          "fields": [
+            {
+              "path": "lineItems.0.description",
+              "compare": "text",
+              "expected": "TRAD KY TOAST CARTE",
+              "predicted": "TRAD KY TOAST CARTE",
+              "valueCorrect": true,
+              "iou": 0.8719511875219709,
+              "predictedPage": 0
+            },
+            {
+              "path": "lineItems.0.quantity",
+              "compare": "count",
+              "expected": null,
+              "predicted": null,
+              "valueCorrect": true,
+              "iou": null,
+              "predictedPage": null
+            },
+            {
+              "path": "lineItems.0.unitPrice",
+              "compare": "money",
+              "expected": null,
+              "predicted": null,
+              "valueCorrect": true,
+              "iou": null,
+              "predictedPage": null
+            },
+            {
+              "path": "lineItems.0.amount",
+              "compare": "money",
+              "expected": "28.182",
+              "predicted": "28.182",
+              "valueCorrect": true,
+              "iou": 0.8181308109040133,
+              "predictedPage": 0
+            },
+            {
+              "path": "subtotal",
+              "compare": "money",
+              "expected": "28.182",
+              "predicted": "28.182",
+              "valueCorrect": true,
+              "iou": 0.7639595885409229,
+              "predictedPage": 0
+            },
+            {
+              "path": "discount",
+              "compare": "money",
+              "expected": null,
+              "predicted": null,
+              "valueCorrect": true,
+              "iou": null,
+              "predictedPage": null
+            },
+            {
+              "path": "serviceCharge",
+              "compare": "money",
+              "expected": null,
+              "predicted": null,
+              "valueCorrect": true,
+              "iou": null,
+              "predictedPage": null
+            },
+            {
+              "path": "tax",
+              "compare": "money",
+              "expected": "2.818",
+              "predicted": "2.818",
+              "valueCorrect": true,
+              "iou": 0.7857055246440235,
+              "predictedPage": 0
+            },
+            {
+              "path": "total",
+              "compare": "money",
+              "expected": "31.000",
+              "predicted": "31.000",
+              "valueCorrect": true,
+              "iou": 0.9199655605615766,
+              "predictedPage": 0
+            }
+          ],
+          "extraLineItems": 0,
+          "usage": {
+            "inputTokens": 1470,
+            "outputTokens": 1781,
+            "modelCalls": 1,
+            "costUSD": 0.018234
+          }
+        },
+        {
+          "docId": "cord/test/6",
+          "dataset": "cord",
+          "schema": "receipt",
+          "error": null,
+          "fields": [
+            {
+              "path": "lineItems.0.description",
+              "compare": "text",
+              "expected": "EGG TART",
+              "predicted": "EGG TART",
+              "valueCorrect": true,
+              "iou": 0.795678327008799,
+              "predictedPage": 0
+            },
+            {
+              "path": "lineItems.0.quantity",
+              "compare": "count",
+              "expected": "1",
+              "predicted": "1",
+              "valueCorrect": true,
+              "iou": 0.7272612190644968,
+              "predictedPage": 0
+            },
+            {
+              "path": "lineItems.0.unitPrice",
+              "compare": "money",
+              "expected": null,
+              "predicted": null,
+              "valueCorrect": true,
+              "iou": null,
+              "predictedPage": null
+            },
+            {
+              "path": "lineItems.0.amount",
+              "compare": "money",
+              "expected": "13,000",
+              "predicted": "13,000",
+              "valueCorrect": true,
+              "iou": 0.8216658062717782,
+              "predictedPage": 0
+            },
+            {
+              "path": "lineItems.1.description",
+              "compare": "text",
+              "expected": "CHOCO CUS ARD PASTRY",
+              "predicted": "CHOCO CUSTARD PASTRY",
+              "valueCorrect": false,
+              "iou": null,
+              "predictedPage": 0
+            },
+            {
+              "path": "lineItems.1.quantity",
+              "compare": "count",
+              "expected": "2",
+              "predicted": "2",
+              "valueCorrect": true,
+              "iou": 0.5300505983385704,
+              "predictedPage": 0
+            },
+            {
+              "path": "lineItems.1.unitPrice",
+              "compare": "money",
+              "expected": null,
+              "predicted": null,
+              "valueCorrect": true,
+              "iou": null,
+              "predictedPage": null
+            },
+            {
+              "path": "lineItems.1.amount",
+              "compare": "money",
+              "expected": "24,000",
+              "predicted": "24,000",
+              "valueCorrect": true,
+              "iou": 0.819671544439026,
+              "predictedPage": 0
+            },
+            {
+              "path": "lineItems.2.description",
+              "compare": "text",
+              "expected": "REDBEAN BREAD",
+              "predicted": "REDBEAN BREAD",
+              "valueCorrect": true,
+              "iou": 0.7879832638940021,
+              "predictedPage": 0
+            },
+            {
+              "path": "lineItems.2.quantity",
+              "compare": "count",
+              "expected": "1",
+              "predicted": "1",
+              "valueCorrect": true,
+              "iou": 0.474131527889692,
+              "predictedPage": 0
+            },
+            {
+              "path": "lineItems.2.unitPrice",
+              "compare": "money",
+              "expected": null,
+              "predicted": null,
+              "valueCorrect": true,
+              "iou": null,
+              "predictedPage": null
+            },
+            {
+              "path": "lineItems.2.amount",
+              "compare": "money",
+              "expected": "9,000",
+              "predicted": "9,000",
+              "valueCorrect": true,
+              "iou": 0.9053030738211121,
+              "predictedPage": 0
+            },
+            {
+              "path": "subtotal",
+              "compare": "money",
+              "expected": null,
+              "predicted": null,
+              "valueCorrect": true,
+              "iou": null,
+              "predictedPage": null
+            },
+            {
+              "path": "discount",
+              "compare": "money",
+              "expected": null,
+              "predicted": null,
+              "valueCorrect": true,
+              "iou": null,
+              "predictedPage": null
+            },
+            {
+              "path": "serviceCharge",
+              "compare": "money",
+              "expected": null,
+              "predicted": null,
+              "valueCorrect": true,
+              "iou": null,
+              "predictedPage": null
+            },
+            {
+              "path": "tax",
+              "compare": "money",
+              "expected": null,
+              "predicted": null,
+              "valueCorrect": true,
+              "iou": null,
+              "predictedPage": null
+            },
+            {
+              "path": "total",
+              "compare": "money",
+              "expected": "46,000",
+              "predicted": "46,000",
+              "valueCorrect": true,
+              "iou": 0.8746911637879685,
+              "predictedPage": 0
+            }
+          ],
+          "extraLineItems": 0,
+          "usage": {
+            "inputTokens": 1450,
+            "outputTokens": 2407,
+            "modelCalls": 1,
+            "costUSD": 0.023838
+          }
+        },
+        {
+          "docId": "cord/test/7",
+          "dataset": "cord",
+          "schema": "receipt",
+          "error": null,
+          "fields": [
+            {
+              "path": "lineItems.0.description",
+              "compare": "text",
+              "expected": "Kupon 15",
+              "predicted": "Kupon 15",
+              "valueCorrect": true,
+              "iou": 0.8209266862170095,
+              "predictedPage": 0
+            },
+            {
+              "path": "lineItems.0.quantity",
+              "compare": "count",
+              "expected": null,
+              "predicted": null,
+              "valueCorrect": true,
+              "iou": null,
+              "predictedPage": null
+            },
+            {
+              "path": "lineItems.0.unitPrice",
+              "compare": "money",
+              "expected": null,
+              "predicted": null,
+              "valueCorrect": true,
+              "iou": null,
+              "predictedPage": null
+            },
+            {
+              "path": "lineItems.0.amount",
+              "compare": "money",
+              "expected": "100,000",
+              "predicted": "100,000",
+              "valueCorrect": true,
+              "iou": 0.7294491723557452,
+              "predictedPage": 0
+            },
+            {
+              "path": "lineItems.1.description",
+              "compare": "text",
+              "expected": "ADD CHICKEN BOX",
+              "predicted": "ADD CHICKEN BOX",
+              "valueCorrect": true,
+              "iou": 0.8230049816251535,
+              "predictedPage": 0
+            },
+            {
+              "path": "lineItems.1.quantity",
+              "compare": "count",
+              "expected": null,
+              "predicted": null,
+              "valueCorrect": true,
+              "iou": null,
+              "predictedPage": null
+            },
+            {
+              "path": "lineItems.1.unitPrice",
+              "compare": "money",
+              "expected": null,
+              "predicted": null,
+              "valueCorrect": true,
+              "iou": null,
+              "predictedPage": null
+            },
+            {
+              "path": "lineItems.1.amount",
+              "compare": "money",
+              "expected": "909",
+              "predicted": "909",
+              "valueCorrect": true,
+              "iou": 0.7668605742165513,
+              "predictedPage": 0
+            },
+            {
+              "path": "subtotal",
+              "compare": "money",
+              "expected": "100,909",
+              "predicted": "100,909",
+              "valueCorrect": true,
+              "iou": 0.81255193473518,
+              "predictedPage": 0
+            },
+            {
+              "path": "discount",
+              "compare": "money",
+              "expected": null,
+              "predicted": null,
+              "valueCorrect": true,
+              "iou": null,
+              "predictedPage": null
+            },
+            {
+              "path": "serviceCharge",
+              "compare": "money",
+              "expected": null,
+              "predicted": null,
+              "valueCorrect": true,
+              "iou": null,
+              "predictedPage": null
+            },
+            {
+              "path": "tax",
+              "compare": "money",
+              "expected": "10,091",
+              "predicted": "10,091",
+              "valueCorrect": true,
+              "iou": 0.6904871330616927,
+              "predictedPage": 0
+            },
+            {
+              "path": "total",
+              "compare": "money",
+              "expected": "111,000",
+              "predicted": "111,000",
+              "valueCorrect": true,
+              "iou": 0.7220443272430496,
+              "predictedPage": 0
+            }
+          ],
+          "extraLineItems": 0,
+          "usage": {
+            "inputTokens": 1450,
+            "outputTokens": 1990,
+            "modelCalls": 1,
+            "costUSD": 0.020085
+          }
+        },
+        {
+          "docId": "cord/test/8",
+          "dataset": "cord",
+          "schema": "receipt",
+          "error": null,
+          "fields": [
+            {
+              "path": "lineItems.0.description",
+              "compare": "text",
+              "expected": "[REG] BLACK SAKURA",
+              "predicted": "[REG] BLACK SAKURA",
+              "valueCorrect": true,
+              "iou": 0.9584492699578308,
+              "predictedPage": 0
+            },
+            {
+              "path": "lineItems.0.quantity",
+              "compare": "count",
+              "expected": "1",
+              "predicted": "1",
+              "valueCorrect": true,
+              "iou": 0.6268075982279835,
+              "predictedPage": 0
+            },
+            {
+              "path": "lineItems.0.unitPrice",
+              "compare": "money",
+              "expected": null,
+              "predicted": null,
+              "valueCorrect": true,
+              "iou": null,
+              "predictedPage": null
+            },
+            {
+              "path": "lineItems.0.amount",
+              "compare": "money",
+              "expected": "45,455",
+              "predicted": "45,455",
+              "valueCorrect": true,
+              "iou": 0.843045618053157,
+              "predictedPage": 0
+            },
+            {
+              "path": "lineItems.1.description",
+              "compare": "text",
+              "expected": "COOKIE DOH SAUCES",
+              "predicted": "COOKIE DOH SAUCES",
+              "valueCorrect": true,
+              "iou": 0.8288426819232667,
+              "predictedPage": 0
+            },
+            {
+              "path": "lineItems.1.quantity",
+              "compare": "count",
+              "expected": "1",
+              "predicted": "1",
+              "valueCorrect": true,
+              "iou": 0.5868339047836543,
+              "predictedPage": 0
+            },
+            {
+              "path": "lineItems.1.unitPrice",
+              "compare": "money",
+              "expected": null,
+              "predicted": null,
+              "valueCorrect": true,
+              "iou": null,
+              "predictedPage": null
+            },
+            {
+              "path": "lineItems.1.amount",
+              "compare": "money",
+              "expected": "0",
+              "predicted": "0",
+              "valueCorrect": true,
+              "iou": 0.6123848716441284,
+              "predictedPage": 0
+            },
+            {
+              "path": "lineItems.2.description",
+              "compare": "text",
+              "expected": "NATA DE COCO",
+              "predicted": "NATA DE COCO",
+              "valueCorrect": true,
+              "iou": 0.9135919490969959,
+              "predictedPage": 0
+            },
+            {
+              "path": "lineItems.2.quantity",
+              "compare": "count",
+              "expected": "1",
+              "predicted": "1",
+              "valueCorrect": true,
+              "iou": 0.7686768375395636,
+              "predictedPage": 0
+            },
+            {
+              "path": "lineItems.2.unitPrice",
+              "compare": "money",
+              "expected": null,
+              "predicted": null,
+              "valueCorrect": true,
+              "iou": null,
+              "predictedPage": null
+            },
+            {
+              "path": "lineItems.2.amount",
+              "compare": "money",
+              "expected": "0",
+              "predicted": "0",
+              "valueCorrect": true,
+              "iou": 0.7076447405665492,
+              "predictedPage": 0
+            },
+            {
+              "path": "subtotal",
+              "compare": "money",
+              "expected": "45,455",
+              "predicted": "45,455",
+              "valueCorrect": true,
+              "iou": 0.9002057613168721,
+              "predictedPage": 0
+            },
+            {
+              "path": "discount",
+              "compare": "money",
+              "expected": null,
+              "predicted": null,
+              "valueCorrect": true,
+              "iou": null,
+              "predictedPage": null
+            },
+            {
+              "path": "serviceCharge",
+              "compare": "money",
+              "expected": null,
+              "predicted": null,
+              "valueCorrect": true,
+              "iou": null,
+              "predictedPage": null
+            },
+            {
+              "path": "tax",
+              "compare": "money",
+              "expected": "4,545",
+              "predicted": "4,545",
+              "valueCorrect": true,
+              "iou": 0.7622901067419601,
+              "predictedPage": 0
+            },
+            {
+              "path": "total",
+              "compare": "money",
+              "expected": "50,000",
+              "predicted": "50,000",
+              "valueCorrect": true,
+              "iou": 0.7833630525679303,
+              "predictedPage": 0
+            }
+          ],
+          "extraLineItems": 0,
+          "usage": {
+            "inputTokens": 1450,
+            "outputTokens": 2459,
+            "modelCalls": 1,
+            "costUSD": 0.024306
+          }
+        },
+        {
+          "docId": "cord/test/9",
+          "dataset": "cord",
+          "schema": "receipt",
+          "error": null,
+          "fields": [
+            {
+              "path": "lineItems.0.description",
+              "compare": "text",
+              "expected": "Bumbu Kaldu Ayam 1",
+              "predicted": "Bumbu Kaldu Ayam 1",
+              "valueCorrect": true,
+              "iou": 0.773706877470357,
+              "predictedPage": 0
+            },
+            {
+              "path": "lineItems.0.quantity",
+              "compare": "count",
+              "expected": null,
+              "predicted": null,
+              "valueCorrect": true,
+              "iou": null,
+              "predictedPage": null
+            },
+            {
+              "path": "lineItems.0.unitPrice",
+              "compare": "money",
+              "expected": "36000",
+              "predicted": "36000",
+              "valueCorrect": true,
+              "iou": 0.759562703562502,
+              "predictedPage": 0
+            },
+            {
+              "path": "lineItems.0.amount",
+              "compare": "money",
+              "expected": "36000",
+              "predicted": "36000",
+              "valueCorrect": true,
+              "iou": 0.8088109428735938,
+              "predictedPage": 0
+            },
+            {
+              "path": "subtotal",
+              "compare": "money",
+              "expected": "36000",
+              "predicted": "36000",
+              "valueCorrect": true,
+              "iou": 0.7421985071494936,
+              "predictedPage": 0
+            },
+            {
+              "path": "discount",
+              "compare": "money",
+              "expected": null,
+              "predicted": null,
+              "valueCorrect": true,
+              "iou": null,
+              "predictedPage": null
+            },
+            {
+              "path": "serviceCharge",
+              "compare": "money",
+              "expected": null,
+              "predicted": null,
+              "valueCorrect": true,
+              "iou": null,
+              "predictedPage": null
+            },
+            {
+              "path": "tax",
+              "compare": "money",
+              "expected": null,
+              "predicted": null,
+              "valueCorrect": true,
+              "iou": null,
+              "predictedPage": null
+            },
+            {
+              "path": "total",
+              "compare": "money",
+              "expected": null,
+              "predicted": "36000",
+              "valueCorrect": false,
+              "iou": null,
+              "predictedPage": 0
+            }
+          ],
+          "extraLineItems": 0,
+          "usage": {
+            "inputTokens": 3523,
+            "outputTokens": 4061,
+            "modelCalls": 2,
+            "costUSD": 0.0418335
+          }
+        },
+        {
+          "docId": "cord/test/10",
+          "dataset": "cord",
+          "schema": "receipt",
+          "error": null,
+          "fields": [
+            {
+              "path": "lineItems.0.description",
+              "compare": "text",
+              "expected": "CINNAMON SUGAR",
+              "predicted": "CINNAMON SUGAR",
+              "valueCorrect": true,
+              "iou": 0.7844710578397224,
+              "predictedPage": 0
+            },
+            {
+              "path": "lineItems.0.quantity",
+              "compare": "count",
+              "expected": "1 x",
+              "predicted": "1",
+              "valueCorrect": true,
+              "iou": 0.14098316904636252,
+              "predictedPage": 0
+            },
+            {
+              "path": "lineItems.0.unitPrice",
+              "compare": "money",
+              "expected": "17,000",
+              "predicted": "17,000",
+              "valueCorrect": true,
+              "iou": 0.7948800000000005,
+              "predictedPage": 0
+            },
+            {
+              "path": "lineItems.0.amount",
+              "compare": "money",
+              "expected": "17,000",
+              "predicted": "17,000",
+              "valueCorrect": true,
+              "iou": 0.904054031012596,
+              "predictedPage": 0
+            },
+            {
+              "path": "subtotal",
+              "compare": "money",
+              "expected": "17,000",
+              "predicted": "17,000",
+              "valueCorrect": true,
+              "iou": 0.8831371701004235,
+              "predictedPage": 0
+            },
+            {
+              "path": "discount",
+              "compare": "money",
+              "expected": null,
+              "predicted": null,
+              "valueCorrect": true,
+              "iou": null,
+              "predictedPage": null
+            },
+            {
+              "path": "serviceCharge",
+              "compare": "money",
+              "expected": null,
+              "predicted": null,
+              "valueCorrect": true,
+              "iou": null,
+              "predictedPage": null
+            },
+            {
+              "path": "tax",
+              "compare": "money",
+              "expected": null,
+              "predicted": null,
+              "valueCorrect": true,
+              "iou": null,
+              "predictedPage": null
+            },
+            {
+              "path": "total",
+              "compare": "money",
+              "expected": "17,000",
+              "predicted": "17,000",
+              "valueCorrect": true,
+              "iou": 0.8831371701004199,
+              "predictedPage": 0
+            }
+          ],
+          "extraLineItems": 0,
+          "usage": {
+            "inputTokens": 1450,
+            "outputTokens": 1056,
+            "modelCalls": 1,
+            "costUSD": 0.011679
+          }
+        },
+        {
+          "docId": "cord/test/11",
+          "dataset": "cord",
+          "schema": "receipt",
+          "error": null,
+          "fields": [
+            {
+              "path": "lineItems.0.description",
+              "compare": "text",
+              "expected": "BANABERRY FRESH CREAM CAK",
+              "predicted": "BANABERRY FRESH CREAM CAK",
+              "valueCorrect": true,
+              "iou": 0.706035512195123,
+              "predictedPage": 0
+            },
+            {
+              "path": "lineItems.0.quantity",
+              "compare": "count",
+              "expected": "1",
+              "predicted": "1",
+              "valueCorrect": true,
+              "iou": 0.6022691459186906,
+              "predictedPage": 0
+            },
+            {
+              "path": "lineItems.0.unitPrice",
+              "compare": "money",
+              "expected": null,
+              "predicted": null,
+              "valueCorrect": true,
+              "iou": null,
+              "predictedPage": null
+            },
+            {
+              "path": "lineItems.0.amount",
+              "compare": "money",
+              "expected": "230,000",
+              "predicted": "230,000",
+              "valueCorrect": true,
+              "iou": 0.7431782400000008,
+              "predictedPage": 0
+            },
+            {
+              "path": "subtotal",
+              "compare": "money",
+              "expected": null,
+              "predicted": null,
+              "valueCorrect": true,
+              "iou": null,
+              "predictedPage": null
+            },
+            {
+              "path": "discount",
+              "compare": "money",
+              "expected": null,
+              "predicted": null,
+              "valueCorrect": true,
+              "iou": null,
+              "predictedPage": null
+            },
+            {
+              "path": "serviceCharge",
+              "compare": "money",
+              "expected": null,
+              "predicted": null,
+              "valueCorrect": true,
+              "iou": null,
+              "predictedPage": null
+            },
+            {
+              "path": "tax",
+              "compare": "money",
+              "expected": null,
+              "predicted": null,
+              "valueCorrect": true,
+              "iou": null,
+              "predictedPage": null
+            },
+            {
+              "path": "total",
+              "compare": "money",
+              "expected": "230,000",
+              "predicted": "230,000",
+              "valueCorrect": true,
+              "iou": 0.758012191735537,
+              "predictedPage": 0
+            }
+          ],
+          "extraLineItems": 0,
+          "usage": {
+            "inputTokens": 1450,
+            "outputTokens": 1251,
+            "modelCalls": 1,
+            "costUSD": 0.013434
+          }
+        },
+        {
+          "docId": "cord/test/12",
+          "dataset": "cord",
+          "schema": "receipt",
+          "error": null,
+          "fields": [
+            {
+              "path": "lineItems.0.description",
+              "compare": "text",
+              "expected": "BLUS WANITA",
+              "predicted": "0571-1854 BLUS WANITA",
+              "valueCorrect": false,
+              "iou": null,
+              "predictedPage": 0
+            },
+            {
+              "path": "lineItems.0.quantity",
+              "compare": "count",
+              "expected": "1",
+              "predicted": "1",
+              "valueCorrect": true,
+              "iou": 0.6032986111111124,
+              "predictedPage": 0
+            },
+            {
+              "path": "lineItems.0.unitPrice",
+              "compare": "money",
+              "expected": "@120,000",
+              "predicted": "@120,000",
+              "valueCorrect": true,
+              "iou": 0.7864334898887774,
+              "predictedPage": 0
+            },
+            {
+              "path": "lineItems.0.amount",
+              "compare": "money",
+              "expected": null,
+              "predicted": "120,000",
+              "valueCorrect": false,
+              "iou": null,
+              "predictedPage": 0
+            },
+            {
+              "path": "lineItems.1.description",
+              "compare": "text",
+              "expected": "SHOPPING BAG",
+              "predicted": "1002-0060 SHOPPING BAG",
+              "valueCorrect": false,
+              "iou": null,
+              "predictedPage": 0
+            },
+            {
+              "path": "lineItems.1.quantity",
+              "compare": "count",
+              "expected": "1",
+              "predicted": "1",
+              "valueCorrect": true,
+              "iou": 0.7272157190635472,
+              "predictedPage": 0
+            },
+            {
+              "path": "lineItems.1.unitPrice",
+              "compare": "money",
+              "expected": "@880",
+              "predicted": "@880",
+              "valueCorrect": true,
+              "iou": 0.7406476905662445,
+              "predictedPage": 0
+            },
+            {
+              "path": "lineItems.1.amount",
+              "compare": "money",
+              "expected": null,
+              "predicted": "0",
+              "valueCorrect": false,
+              "iou": null,
+              "predictedPage": 0
+            },
+            {
+              "path": "subtotal",
+              "compare": "money",
+              "expected": null,
+              "predicted": null,
+              "valueCorrect": true,
+              "iou": null,
+              "predictedPage": null
+            },
+            {
+              "path": "discount",
+              "compare": "money",
+              "expected": null,
+              "predicted": null,
+              "valueCorrect": true,
+              "iou": null,
+              "predictedPage": null
+            },
+            {
+              "path": "serviceCharge",
+              "compare": "money",
+              "expected": null,
+              "predicted": null,
+              "valueCorrect": true,
+              "iou": null,
+              "predictedPage": null
+            },
+            {
+              "path": "tax",
+              "compare": "money",
+              "expected": null,
+              "predicted": null,
+              "valueCorrect": true,
+              "iou": null,
+              "predictedPage": null
+            },
+            {
+              "path": "total",
+              "compare": "money",
+              "expected": "120,000",
+              "predicted": "120,000",
+              "valueCorrect": true,
+              "iou": 0.8879318144803747,
+              "predictedPage": 0
+            }
+          ],
+          "extraLineItems": 0,
+          "usage": {
+            "inputTokens": 1450,
+            "outputTokens": 2078,
+            "modelCalls": 1,
+            "costUSD": 0.020877
+          }
+        },
+        {
+          "docId": "cord/test/14",
+          "dataset": "cord",
+          "schema": "receipt",
+          "error": null,
+          "fields": [
+            {
+              "path": "lineItems.0.description",
+              "compare": "text",
+              "expected": "RedVelvet Cheese Slc",
+              "predicted": "RedVelvet Cheese Slc",
+              "valueCorrect": true,
+              "iou": 0.8645554585571086,
+              "predictedPage": 0
+            },
+            {
+              "path": "lineItems.0.quantity",
+              "compare": "count",
+              "expected": "1",
+              "predicted": "1",
+              "valueCorrect": true,
+              "iou": 0.723769276861458,
+              "predictedPage": 0
+            },
+            {
+              "path": "lineItems.0.unitPrice",
+              "compare": "money",
+              "expected": null,
+              "predicted": null,
+              "valueCorrect": true,
+              "iou": null,
+              "predictedPage": null
+            },
+            {
+              "path": "lineItems.0.amount",
+              "compare": "money",
+              "expected": "38,000",
+              "predicted": "38,000",
+              "valueCorrect": true,
+              "iou": 0.7634947359879919,
+              "predictedPage": 0
+            },
+            {
+              "path": "lineItems.1.description",
+              "compare": "text",
+              "expected": "Chicken Baked Rice",
+              "predicted": "Chicken Baked Rice",
+              "valueCorrect": true,
+              "iou": 0.9497088000000008,
+              "predictedPage": 0
+            },
+            {
+              "path": "lineItems.1.quantity",
+              "compare": "count",
+              "expected": "1",
+              "predicted": "1",
+              "valueCorrect": true,
+              "iou": 0.6626669832343339,
+              "predictedPage": 0
+            },
+            {
+              "path": "lineItems.1.unitPrice",
+              "compare": "money",
+              "expected": null,
+              "predicted": null,
+              "valueCorrect": true,
+              "iou": null,
+              "predictedPage": null
+            },
+            {
+              "path": "lineItems.1.amount",
+              "compare": "money",
+              "expected": "55,000",
+              "predicted": "55,000",
+              "valueCorrect": true,
+              "iou": 0.8871946308724835,
+              "predictedPage": 0
+            },
+            {
+              "path": "lineItems.2.description",
+              "compare": "text",
+              "expected": "Fish n Chips",
+              "predicted": "Fish n Chips",
+              "valueCorrect": true,
+              "iou": 0.9234421442792317,
+              "predictedPage": 0
+            },
+            {
+              "path": "lineItems.2.quantity",
+              "compare": "count",
+              "expected": "1",
+              "predicted": "1",
+              "valueCorrect": true,
+              "iou": 0.5908603304012006,
+              "predictedPage": 0
+            },
+            {
+              "path": "lineItems.2.unitPrice",
+              "compare": "money",
+              "expected": null,
+              "predicted": null,
+              "valueCorrect": true,
+              "iou": null,
+              "predictedPage": null
+            },
+            {
+              "path": "lineItems.2.amount",
+              "compare": "money",
+              "expected": "65,000",
+              "predicted": "65,000",
+              "valueCorrect": true,
+              "iou": 0.8636896271984473,
+              "predictedPage": 0
+            },
+            {
+              "path": "lineItems.3.description",
+              "compare": "text",
+              "expected": "Mushroom Soup",
+              "predicted": "Mushroom Soup",
+              "valueCorrect": true,
+              "iou": 0.7798076971608847,
+              "predictedPage": 0
+            },
+            {
+              "path": "lineItems.3.quantity",
+              "compare": "count",
+              "expected": "1",
+              "predicted": "1",
+              "valueCorrect": true,
+              "iou": 0.5351182197496497,
+              "predictedPage": 0
+            },
+            {
+              "path": "lineItems.3.unitPrice",
+              "compare": "money",
+              "expected": null,
+              "predicted": null,
+              "valueCorrect": true,
+              "iou": null,
+              "predictedPage": null
+            },
+            {
+              "path": "lineItems.3.amount",
+              "compare": "money",
+              "expected": "35,000",
+              "predicted": "35,000",
+              "valueCorrect": true,
+              "iou": 0.8160000000000002,
+              "predictedPage": 0
+            },
+            {
+              "path": "lineItems.4.description",
+              "compare": "text",
+              "expected": "Chamomile",
+              "predicted": "Chamomile",
+              "valueCorrect": true,
+              "iou": 0.812565975962319,
+              "predictedPage": 0
+            },
+            {
+              "path": "lineItems.4.quantity",
+              "compare": "count",
+              "expected": "1",
+              "predicted": "1",
+              "valueCorrect": true,
+              "iou": 0.501662563139324,
+              "predictedPage": 0
+            },
+            {
+              "path": "lineItems.4.unitPrice",
+              "compare": "money",
+              "expected": null,
+              "predicted": null,
+              "valueCorrect": true,
+              "iou": null,
+              "predictedPage": null
+            },
+            {
+              "path": "lineItems.4.amount",
+              "compare": "money",
+              "expected": "25,000",
+              "predicted": "25,000",
+              "valueCorrect": true,
+              "iou": 0.83232,
+              "predictedPage": 0
+            },
+            {
+              "path": "lineItems.5.description",
+              "compare": "text",
+              "expected": "Iced Tea",
+              "predicted": "Iced Tea",
+              "valueCorrect": true,
+              "iou": 0.8251629248813874,
+              "predictedPage": 0
+            },
+            {
+              "path": "lineItems.5.quantity",
+              "compare": "count",
+              "expected": "1",
+              "predicted": "1",
+              "valueCorrect": true,
+              "iou": 0.5441338533745892,
+              "predictedPage": 0
+            },
+            {
+              "path": "lineItems.5.unitPrice",
+              "compare": "money",
+              "expected": null,
+              "predicted": null,
+              "valueCorrect": true,
+              "iou": null,
+              "predictedPage": null
+            },
+            {
+              "path": "lineItems.5.amount",
+              "compare": "money",
+              "expected": "20,000",
+              "predicted": "20,000",
+              "valueCorrect": true,
+              "iou": 0.8011636363636335,
+              "predictedPage": 0
+            },
+            {
+              "path": "subtotal",
+              "compare": "money",
+              "expected": "238,000",
+              "predicted": "238,000",
+              "valueCorrect": true,
+              "iou": 0.8563754913294799,
+              "predictedPage": 0
+            },
+            {
+              "path": "discount",
+              "compare": "money",
+              "expected": null,
+              "predicted": null,
+              "valueCorrect": true,
+              "iou": null,
+              "predictedPage": null
+            },
+            {
+              "path": "serviceCharge",
+              "compare": "money",
+              "expected": "17,850",
+              "predicted": "17,850",
+              "valueCorrect": true,
+              "iou": 0.7763416295301176,
+              "predictedPage": 0
+            },
+            {
+              "path": "tax",
+              "compare": "money",
+              "expected": "25,585",
+              "predicted": "25,585",
+              "valueCorrect": true,
+              "iou": 0.8112861275518253,
+              "predictedPage": 0
+            },
+            {
+              "path": "total",
+              "compare": "money",
+              "expected": "281,435",
+              "predicted": "281,435",
+              "valueCorrect": true,
+              "iou": 0.8986730954089243,
+              "predictedPage": 0
+            }
+          ],
+          "extraLineItems": 0,
+          "usage": {
+            "inputTokens": 1470,
+            "outputTokens": 4166,
+            "modelCalls": 1,
+            "costUSD": 0.039699
+          }
+        },
+        {
+          "docId": "cord/test/15",
+          "dataset": "cord",
+          "schema": "receipt",
+          "error": null,
+          "fields": [
+            {
+              "path": "lineItems.0.description",
+              "compare": "text",
+              "expected": "Lemon Tea (L)",
+              "predicted": "Lemon Tea (L)",
+              "valueCorrect": true,
+              "iou": 0.9426215661296942,
+              "predictedPage": 0
+            },
+            {
+              "path": "lineItems.0.quantity",
+              "compare": "count",
+              "expected": "1",
+              "predicted": "1",
+              "valueCorrect": true,
+              "iou": 0.6871383331265013,
+              "predictedPage": 0
+            },
+            {
+              "path": "lineItems.0.unitPrice",
+              "compare": "money",
+              "expected": null,
+              "predicted": null,
+              "valueCorrect": true,
+              "iou": null,
+              "predictedPage": null
+            },
+            {
+              "path": "lineItems.0.amount",
+              "compare": "money",
+              "expected": "25.000",
+              "predicted": "25.000",
+              "valueCorrect": true,
+              "iou": 0.9102474678257076,
+              "predictedPage": 0
+            },
+            {
+              "path": "lineItems.1.description",
+              "compare": "text",
+              "expected": "Caramel Small",
+              "predicted": "Caramel Small",
+              "valueCorrect": true,
+              "iou": 0.8957828964542076,
+              "predictedPage": 0
+            },
+            {
+              "path": "lineItems.1.quantity",
+              "compare": "count",
+              "expected": "1",
+              "predicted": "1",
+              "valueCorrect": true,
+              "iou": 0.6837397830653856,
+              "predictedPage": 0
+            },
+            {
+              "path": "lineItems.1.unitPrice",
+              "compare": "money",
+              "expected": null,
+              "predicted": null,
+              "valueCorrect": true,
+              "iou": null,
+              "predictedPage": null
+            },
+            {
+              "path": "lineItems.1.amount",
+              "compare": "money",
+              "expected": "38.000",
+              "predicted": "38.000",
+              "valueCorrect": true,
+              "iou": 0.8616063590548908,
+              "predictedPage": 0
+            },
+            {
+              "path": "subtotal",
+              "compare": "money",
+              "expected": null,
+              "predicted": null,
+              "valueCorrect": true,
+              "iou": null,
+              "predictedPage": null
+            },
+            {
+              "path": "discount",
+              "compare": "money",
+              "expected": null,
+              "predicted": null,
+              "valueCorrect": true,
+              "iou": null,
+              "predictedPage": null
+            },
+            {
+              "path": "serviceCharge",
+              "compare": "money",
+              "expected": null,
+              "predicted": null,
+              "valueCorrect": true,
+              "iou": null,
+              "predictedPage": null
+            },
+            {
+              "path": "tax",
+              "compare": "money",
+              "expected": null,
+              "predicted": null,
+              "valueCorrect": true,
+              "iou": null,
+              "predictedPage": null
+            },
+            {
+              "path": "total",
+              "compare": "money",
+              "expected": "63.000",
+              "predicted": "63.000",
+              "valueCorrect": true,
+              "iou": 0.8901999026949774,
+              "predictedPage": 0
+            }
+          ],
+          "extraLineItems": 0,
+          "usage": {
+            "inputTokens": 1450,
+            "outputTokens": 1818,
+            "modelCalls": 1,
+            "costUSD": 0.018537
+          }
+        },
+        {
+          "docId": "cord/test/16",
+          "dataset": "cord",
+          "schema": "receipt",
+          "error": null,
+          "fields": [
+            {
+              "path": "lineItems.0.description",
+              "compare": "text",
+              "expected": "[LG] BLACK SAKURA",
+              "predicted": "[LG] BLACK SAKURA",
+              "valueCorrect": true,
+              "iou": 0.93808868651558,
+              "predictedPage": 0
+            },
+            {
+              "path": "lineItems.0.quantity",
+              "compare": "count",
+              "expected": "1",
+              "predicted": "1",
+              "valueCorrect": true,
+              "iou": 0.5491742536523401,
+              "predictedPage": 0
+            },
+            {
+              "path": "lineItems.0.unitPrice",
+              "compare": "money",
+              "expected": null,
+              "predicted": null,
+              "valueCorrect": true,
+              "iou": null,
+              "predictedPage": null
+            },
+            {
+              "path": "lineItems.0.amount",
+              "compare": "money",
+              "expected": "59,091",
+              "predicted": "59,091",
+              "valueCorrect": true,
+              "iou": 0.898391845309424,
+              "predictedPage": 0
+            },
+            {
+              "path": "lineItems.1.description",
+              "compare": "text",
+              "expected": "LONGAN",
+              "predicted": "LONGAN",
+              "valueCorrect": true,
+              "iou": 0.6623186020608607,
+              "predictedPage": 0
+            },
+            {
+              "path": "lineItems.1.quantity",
+              "compare": "count",
+              "expected": "1",
+              "predicted": "1",
+              "valueCorrect": true,
+              "iou": 0.5085259240024247,
+              "predictedPage": 0
+            },
+            {
+              "path": "lineItems.1.unitPrice",
+              "compare": "money",
+              "expected": null,
+              "predicted": null,
+              "valueCorrect": true,
+              "iou": null,
+              "predictedPage": null
+            },
+            {
+              "path": "lineItems.1.amount",
+              "compare": "money",
+              "expected": "0",
+              "predicted": "0",
+              "valueCorrect": true,
+              "iou": 0.8033388022349451,
+              "predictedPage": 0
+            },
+            {
+              "path": "lineItems.2.description",
+              "compare": "text",
+              "expected": "ROASTED ALMOND",
+              "predicted": "ROASTED ALMOND",
+              "valueCorrect": true,
+              "iou": 0.8541345771444093,
+              "predictedPage": 0
+            },
+            {
+              "path": "lineItems.2.quantity",
+              "compare": "count",
+              "expected": "1",
+              "predicted": "1",
+              "valueCorrect": true,
+              "iou": 0.624981175265807,
+              "predictedPage": 0
+            },
+            {
+              "path": "lineItems.2.unitPrice",
+              "compare": "money",
+              "expected": null,
+              "predicted": null,
+              "valueCorrect": true,
+              "iou": null,
+              "predictedPage": null
+            },
+            {
+              "path": "lineItems.2.amount",
+              "compare": "money",
+              "expected": "0",
+              "predicted": "0",
+              "valueCorrect": true,
+              "iou": 0.7100856448932661,
+              "predictedPage": 0
+            },
+            {
+              "path": "lineItems.3.description",
+              "compare": "text",
+              "expected": "IVANGGO",
+              "predicted": "MANGGO",
+              "valueCorrect": false,
+              "iou": null,
+              "predictedPage": 0
+            },
+            {
+              "path": "lineItems.3.quantity",
+              "compare": "count",
+              "expected": "1",
+              "predicted": "1",
+              "valueCorrect": true,
+              "iou": 0.7793989275470781,
+              "predictedPage": 0
+            },
+            {
+              "path": "lineItems.3.unitPrice",
+              "compare": "money",
+              "expected": null,
+              "predicted": null,
+              "valueCorrect": true,
+              "iou": null,
+              "predictedPage": null
+            },
+            {
+              "path": "lineItems.3.amount",
+              "compare": "money",
+              "expected": "0",
+              "predicted": "0",
+              "valueCorrect": true,
+              "iou": 0.6547164881107898,
+              "predictedPage": 0
+            },
+            {
+              "path": "lineItems.4.description",
+              "compare": "text",
+              "expected": "IVINERAL WATER (bundling) 5k",
+              "predicted": "MINERAL WATER (bundling) 5k",
+              "valueCorrect": false,
+              "iou": null,
+              "predictedPage": 0
+            },
+            {
+              "path": "lineItems.4.quantity",
+              "compare": "count",
+              "expected": "1",
+              "predicted": "1",
+              "valueCorrect": true,
+              "iou": 0.5979627641597564,
+              "predictedPage": 0
+            },
+            {
+              "path": "lineItems.4.unitPrice",
+              "compare": "money",
+              "expected": null,
+              "predicted": null,
+              "valueCorrect": true,
+              "iou": null,
+              "predictedPage": null
+            },
+            {
+              "path": "lineItems.4.amount",
+              "compare": "money",
+              "expected": "4,545",
+              "predicted": "4,545",
+              "valueCorrect": true,
+              "iou": 0.7255680648322734,
+              "predictedPage": 0
+            },
+            {
+              "path": "subtotal",
+              "compare": "money",
+              "expected": "63,636",
+              "predicted": "63,636",
+              "valueCorrect": true,
+              "iou": 0.794107106485121,
+              "predictedPage": 0
+            },
+            {
+              "path": "discount",
+              "compare": "money",
+              "expected": null,
+              "predicted": null,
+              "valueCorrect": true,
+              "iou": null,
+              "predictedPage": null
+            },
+            {
+              "path": "serviceCharge",
+              "compare": "money",
+              "expected": null,
+              "predicted": null,
+              "valueCorrect": true,
+              "iou": null,
+              "predictedPage": null
+            },
+            {
+              "path": "tax",
+              "compare": "money",
+              "expected": "6,364",
+              "predicted": "6,364",
+              "valueCorrect": true,
+              "iou": 0.706221922673795,
+              "predictedPage": 0
+            },
+            {
+              "path": "total",
+              "compare": "money",
+              "expected": "70,000",
+              "predicted": "70,000",
+              "valueCorrect": true,
+              "iou": 0.7316708609203008,
+              "predictedPage": 0
+            }
+          ],
+          "extraLineItems": 0,
+          "usage": {
+            "inputTokens": 1450,
+            "outputTokens": 3327,
+            "modelCalls": 1,
+            "costUSD": 0.032118
+          }
+        },
+        {
+          "docId": "cord/test/17",
+          "dataset": "cord",
+          "schema": "receipt",
+          "error": null,
+          "fields": [
+            {
+              "path": "lineItems.0.description",
+              "compare": "text",
+              "expected": "Goblin's Mace",
+              "predicted": "Goblin's Mace",
+              "valueCorrect": true,
+              "iou": 0.8131177465022469,
+              "predictedPage": 0
+            },
+            {
+              "path": "lineItems.0.quantity",
+              "compare": "count",
+              "expected": "1",
+              "predicted": "1",
+              "valueCorrect": true,
+              "iou": 0.6625882352941197,
+              "predictedPage": 0
+            },
+            {
+              "path": "lineItems.0.unitPrice",
+              "compare": "money",
+              "expected": null,
+              "predicted": null,
+              "valueCorrect": true,
+              "iou": null,
+              "predictedPage": null
+            },
+            {
+              "path": "lineItems.0.amount",
+              "compare": "money",
+              "expected": "25,000",
+              "predicted": "25,000",
+              "valueCorrect": true,
+              "iou": 0.7710224078387288,
+              "predictedPage": 0
+            },
+            {
+              "path": "lineItems.1.description",
+              "compare": "text",
+              "expected": "Mozarella Hot Dog",
+              "predicted": "Mozarella Hot Dog",
+              "valueCorrect": true,
+              "iou": 0.8478536426681115,
+              "predictedPage": 0
+            },
+            {
+              "path": "lineItems.1.quantity",
+              "compare": "count",
+              "expected": "2",
+              "predicted": "2",
+              "valueCorrect": true,
+              "iou": 0.7571724341910661,
+              "predictedPage": 0
+            },
+            {
+              "path": "lineItems.1.unitPrice",
+              "compare": "money",
+              "expected": null,
+              "predicted": null,
+              "valueCorrect": true,
+              "iou": null,
+              "predictedPage": null
+            },
+            {
+              "path": "lineItems.1.amount",
+              "compare": "money",
+              "expected": "38,000",
+              "predicted": "38,000",
+              "valueCorrect": true,
+              "iou": 0.7841006262470399,
+              "predictedPage": 0
+            },
+            {
+              "path": "lineItems.2.description",
+              "compare": "text",
+              "expected": "Chili Pepper Croquette",
+              "predicted": "Chili Pepper Croquette",
+              "valueCorrect": true,
+              "iou": 0.8418052044940814,
+              "predictedPage": 0
+            },
+            {
+              "path": "lineItems.2.quantity",
+              "compare": "count",
+              "expected": "1",
+              "predicted": "1",
+              "valueCorrect": true,
+              "iou": 0.6190638501718102,
+              "predictedPage": 0
+            },
+            {
+              "path": "lineItems.2.unitPrice",
+              "compare": "money",
+              "expected": null,
+              "predicted": null,
+              "valueCorrect": true,
+              "iou": null,
+              "predictedPage": null
+            },
+            {
+              "path": "lineItems.2.amount",
+              "compare": "money",
+              "expected": "14,000",
+              "predicted": "14,000",
+              "valueCorrect": true,
+              "iou": 0.7860525387034422,
+              "predictedPage": 0
+            },
+            {
+              "path": "lineItems.3.description",
+              "compare": "text",
+              "expected": "Cheese Croquette",
+              "predicted": "Cheese Croquette",
+              "valueCorrect": true,
+              "iou": 0.8817695783407562,
+              "predictedPage": 0
+            },
+            {
+              "path": "lineItems.3.quantity",
+              "compare": "count",
+              "expected": "1",
+              "predicted": "1",
+              "valueCorrect": true,
+              "iou": 0.6773243584350082,
+              "predictedPage": 0
+            },
+            {
+              "path": "lineItems.3.unitPrice",
+              "compare": "money",
+              "expected": null,
+              "predicted": null,
+              "valueCorrect": true,
+              "iou": null,
+              "predictedPage": null
+            },
+            {
+              "path": "lineItems.3.amount",
+              "compare": "money",
+              "expected": "14,000",
+              "predicted": "14,000",
+              "valueCorrect": true,
+              "iou": 0.7887794289530758,
+              "predictedPage": 0
+            },
+            {
+              "path": "lineItems.4.description",
+              "compare": "text",
+              "expected": "Plastik Amook",
+              "predicted": "Plastik Amook",
+              "valueCorrect": true,
+              "iou": 0.7082170948529066,
+              "predictedPage": 0
+            },
+            {
+              "path": "lineItems.4.quantity",
+              "compare": "count",
+              "expected": "1",
+              "predicted": "1",
+              "valueCorrect": true,
+              "iou": 0.6030659652895066,
+              "predictedPage": 0
+            },
+            {
+              "path": "lineItems.4.unitPrice",
+              "compare": "money",
+              "expected": null,
+              "predicted": null,
+              "valueCorrect": true,
+              "iou": null,
+              "predictedPage": null
+            },
+            {
+              "path": "lineItems.4.amount",
+              "compare": "money",
+              "expected": "0",
+              "predicted": "0",
+              "valueCorrect": true,
+              "iou": 0.5330911388406241,
+              "predictedPage": 0
+            },
+            {
+              "path": "lineItems.5.description",
+              "compare": "text",
+              "expected": "Plastik Putih Take Away",
+              "predicted": "Plastik Putih Take Away",
+              "valueCorrect": true,
+              "iou": 0.7899428571428574,
+              "predictedPage": 0
+            },
+            {
+              "path": "lineItems.5.quantity",
+              "compare": "count",
+              "expected": "1",
+              "predicted": "1",
+              "valueCorrect": true,
+              "iou": 0.7376382814509936,
+              "predictedPage": 0
+            },
+            {
+              "path": "lineItems.5.unitPrice",
+              "compare": "money",
+              "expected": null,
+              "predicted": null,
+              "valueCorrect": true,
+              "iou": null,
+              "predictedPage": null
+            },
+            {
+              "path": "lineItems.5.amount",
+              "compare": "money",
+              "expected": "0",
+              "predicted": "0",
+              "valueCorrect": true,
+              "iou": 0.49563489674273,
+              "predictedPage": 0
+            },
+            {
+              "path": "subtotal",
+              "compare": "money",
+              "expected": "91,000",
+              "predicted": "91,000",
+              "valueCorrect": true,
+              "iou": 0.8407578947368487,
+              "predictedPage": 0
+            },
+            {
+              "path": "discount",
+              "compare": "money",
+              "expected": "(0)",
+              "predicted": "(0)",
+              "valueCorrect": true,
+              "iou": 0.6339047619047629,
+              "predictedPage": 0
+            },
+            {
+              "path": "serviceCharge",
+              "compare": "money",
+              "expected": null,
+              "predicted": null,
+              "valueCorrect": true,
+              "iou": null,
+              "predictedPage": null
+            },
+            {
+              "path": "tax",
+              "compare": "money",
+              "expected": null,
+              "predicted": null,
+              "valueCorrect": true,
+              "iou": null,
+              "predictedPage": null
+            },
+            {
+              "path": "total",
+              "compare": "money",
+              "expected": "Rp. 91,000",
+              "predicted": "Rp. 91,000",
+              "valueCorrect": true,
+              "iou": 0.7975915252845894,
+              "predictedPage": 0
+            }
+          ],
+          "extraLineItems": 0,
+          "usage": {
+            "inputTokens": 1434,
+            "outputTokens": 3363,
+            "modelCalls": 1,
+            "costUSD": 0.032418
+          }
+        },
+        {
+          "docId": "cord/test/18",
+          "dataset": "cord",
+          "schema": "receipt",
+          "error": "MissingRequiredFieldsError: Required fields not found in document: $.total",
+          "fields": [
+            {
+              "path": "lineItems.0.description",
+              "compare": "text",
+              "expected": "Propolis Cair",
+              "predicted": "Propolis Cair 1",
+              "valueCorrect": false,
+              "iou": null,
+              "predictedPage": 0
+            },
+            {
+              "path": "lineItems.0.quantity",
+              "compare": "count",
+              "expected": "1",
+              "predicted": null,
+              "valueCorrect": false,
+              "iou": null,
+              "predictedPage": null
+            },
+            {
+              "path": "lineItems.0.unitPrice",
+              "compare": "money",
+              "expected": "156000",
+              "predicted": "156000",
+              "valueCorrect": true,
+              "iou": 0.9110461128255318,
+              "predictedPage": 0
+            },
+            {
+              "path": "lineItems.0.amount",
+              "compare": "money",
+              "expected": "156000",
+              "predicted": "156000",
+              "valueCorrect": true,
+              "iou": 0.8179271708683469,
+              "predictedPage": 0
+            },
+            {
+              "path": "subtotal",
+              "compare": "money",
+              "expected": null,
+              "predicted": "156000",
+              "valueCorrect": false,
+              "iou": null,
+              "predictedPage": 0
+            },
+            {
+              "path": "discount",
+              "compare": "money",
+              "expected": null,
+              "predicted": null,
+              "valueCorrect": true,
+              "iou": null,
+              "predictedPage": null
+            },
+            {
+              "path": "serviceCharge",
+              "compare": "money",
+              "expected": null,
+              "predicted": null,
+              "valueCorrect": true,
+              "iou": null,
+              "predictedPage": null
+            },
+            {
+              "path": "tax",
+              "compare": "money",
+              "expected": null,
+              "predicted": null,
+              "valueCorrect": true,
+              "iou": null,
+              "predictedPage": null
+            },
+            {
+              "path": "total",
+              "compare": "money",
+              "expected": "156000",
+              "predicted": null,
+              "valueCorrect": false,
+              "iou": null,
+              "predictedPage": null
+            }
+          ],
+          "extraLineItems": 0,
+          "usage": {
+            "inputTokens": 3536,
+            "outputTokens": 3410,
+            "modelCalls": 2,
+            "costUSD": 0.035994
+          }
+        },
+        {
+          "docId": "cord/test/19",
+          "dataset": "cord",
+          "schema": "receipt",
+          "error": null,
+          "fields": [
+            {
+              "path": "lineItems.0.description",
+              "compare": "text",
+              "expected": "AMBUSH DBL CHS",
+              "predicted": "AMBUSH DBL CHS",
+              "valueCorrect": true,
+              "iou": 0.8805494009137039,
+              "predictedPage": 0
+            },
+            {
+              "path": "lineItems.0.quantity",
+              "compare": "count",
+              "expected": "4",
+              "predicted": "4",
+              "valueCorrect": true,
+              "iou": 0.6463372627066729,
+              "predictedPage": 0
+            },
+            {
+              "path": "lineItems.0.unitPrice",
+              "compare": "money",
+              "expected": null,
+              "predicted": null,
+              "valueCorrect": true,
+              "iou": null,
+              "predictedPage": null
+            },
+            {
+              "path": "lineItems.0.amount",
+              "compare": "money",
+              "expected": "60000",
+              "predicted": "60000",
+              "valueCorrect": true,
+              "iou": 0.8588286355372848,
+              "predictedPage": 0
+            },
+            {
+              "path": "lineItems.1.description",
+              "compare": "text",
+              "expected": "AMBUSH CHS BUR",
+              "predicted": "AMBUSH CHS BUR",
+              "valueCorrect": true,
+              "iou": 0.8164002734107993,
+              "predictedPage": 0
+            },
+            {
+              "path": "lineItems.1.quantity",
+              "compare": "count",
+              "expected": "10",
+              "predicted": "10",
+              "valueCorrect": true,
+              "iou": 0.8390074359794131,
+              "predictedPage": 0
+            },
+            {
+              "path": "lineItems.1.unitPrice",
+              "compare": "money",
+              "expected": null,
+              "predicted": null,
+              "valueCorrect": true,
+              "iou": null,
+              "predictedPage": null
+            },
+            {
+              "path": "lineItems.1.amount",
+              "compare": "money",
+              "expected": "100000",
+              "predicted": "100000",
+              "valueCorrect": true,
+              "iou": 0.8134892307692295,
+              "predictedPage": 0
+            },
+            {
+              "path": "subtotal",
+              "compare": "money",
+              "expected": "160000",
+              "predicted": "160000",
+              "valueCorrect": true,
+              "iou": 0.8057417142857151,
+              "predictedPage": 0
+            },
+            {
+              "path": "discount",
+              "compare": "money",
+              "expected": null,
+              "predicted": null,
+              "valueCorrect": true,
+              "iou": null,
+              "predictedPage": null
+            },
+            {
+              "path": "serviceCharge",
+              "compare": "money",
+              "expected": null,
+              "predicted": null,
+              "valueCorrect": true,
+              "iou": null,
+              "predictedPage": null
+            },
+            {
+              "path": "tax",
+              "compare": "money",
+              "expected": "16000",
+              "predicted": "16000",
+              "valueCorrect": true,
+              "iou": 0.7821303719095285,
+              "predictedPage": 0
+            },
+            {
+              "path": "total",
+              "compare": "money",
+              "expected": "176000",
+              "predicted": "176000",
+              "valueCorrect": true,
+              "iou": 0.7191351546624529,
+              "predictedPage": 0
+            }
+          ],
+          "extraLineItems": 0,
+          "usage": {
+            "inputTokens": 1450,
+            "outputTokens": 2170,
+            "modelCalls": 1,
+            "costUSD": 0.021705
+          }
+        },
+        {
+          "docId": "cord/test/20",
+          "dataset": "cord",
+          "schema": "receipt",
+          "error": null,
+          "fields": [
+            {
+              "path": "lineItems.0.description",
+              "compare": "text",
+              "expected": "cashew nuts chkn",
+              "predicted": "cashew nuts chkm",
+              "valueCorrect": false,
+              "iou": null,
+              "predictedPage": 0
+            },
+            {
+              "path": "lineItems.0.quantity",
+              "compare": "count",
+              "expected": "1",
+              "predicted": "1",
+              "valueCorrect": true,
+              "iou": 0.8944487979694827,
+              "predictedPage": 0
+            },
+            {
+              "path": "lineItems.0.unitPrice",
+              "compare": "money",
+              "expected": null,
+              "predicted": null,
+              "valueCorrect": true,
+              "iou": null,
+              "predictedPage": null
+            },
+            {
+              "path": "lineItems.0.amount",
+              "compare": "money",
+              "expected": "64,500",
+              "predicted": "64,500",
+              "valueCorrect": true,
+              "iou": 0.8616707452839372,
+              "predictedPage": 0
+            },
+            {
+              "path": "lineItems.1.description",
+              "compare": "text",
+              "expected": "garlic pepper beef",
+              "predicted": "garlic pepper beef",
+              "valueCorrect": true,
+              "iou": 0.8019000000000014,
+              "predictedPage": 0
+            },
+            {
+              "path": "lineItems.1.quantity",
+              "compare": "count",
+              "expected": "1",
+              "predicted": "1",
+              "valueCorrect": true,
+              "iou": 0.5134158530022305,
+              "predictedPage": 0
+            },
+            {
+              "path": "lineItems.1.unitPrice",
+              "compare": "money",
+              "expected": null,
+              "predicted": null,
+              "valueCorrect": true,
+              "iou": null,
+              "predictedPage": null
+            },
+            {
+              "path": "lineItems.1.amount",
+              "compare": "money",
+              "expected": "79,500",
+              "predicted": "79,500",
+              "valueCorrect": true,
+              "iou": 0.8793635083177894,
+              "predictedPage": 0
+            },
+            {
+              "path": "lineItems.2.description",
+              "compare": "text",
+              "expected": "red curry beef",
+              "predicted": "red curry beef",
+              "valueCorrect": true,
+              "iou": 0.7514851968793586,
+              "predictedPage": 0
+            },
+            {
+              "path": "lineItems.2.quantity",
+              "compare": "count",
+              "expected": "1",
+              "predicted": "1",
+              "valueCorrect": true,
+              "iou": 0.44953277221817356,
+              "predictedPage": 0
+            },
+            {
+              "path": "lineItems.2.unitPrice",
+              "compare": "money",
+              "expected": null,
+              "predicted": null,
+              "valueCorrect": true,
+              "iou": null,
+              "predictedPage": null
+            },
+            {
+              "path": "lineItems.2.amount",
+              "compare": "money",
+              "expected": "69,500",
+              "predicted": "69,500",
+              "valueCorrect": true,
+              "iou": 0.6855874287206722,
+              "predictedPage": 0
+            },
+            {
+              "path": "lineItems.3.description",
+              "compare": "text",
+              "expected": "phad thai",
+              "predicted": "phad thai",
+              "valueCorrect": true,
+              "iou": 0.619508158653014,
+              "predictedPage": 0
+            },
+            {
+              "path": "lineItems.3.quantity",
+              "compare": "count",
+              "expected": "1",
+              "predicted": "1",
+              "valueCorrect": true,
+              "iou": 0.36766699449775603,
+              "predictedPage": 0
+            },
+            {
+              "path": "lineItems.3.unitPrice",
+              "compare": "money",
+              "expected": null,
+              "predicted": null,
+              "valueCorrect": true,
+              "iou": null,
+              "predictedPage": null
+            },
+            {
+              "path": "lineItems.3.amount",
+              "compare": "money",
+              "expected": "64,500",
+              "predicted": "64,500",
+              "valueCorrect": true,
+              "iou": 0.7620789513793619,
+              "predictedPage": 0
+            },
+            {
+              "path": "lineItems.4.description",
+              "compare": "text",
+              "expected": "steamed rice",
+              "predicted": "steamed rice",
+              "valueCorrect": true,
+              "iou": 0.7361270511049571,
+              "predictedPage": 0
+            },
+            {
+              "path": "lineItems.4.quantity",
+              "compare": "count",
+              "expected": "4",
+              "predicted": "4",
+              "valueCorrect": true,
+              "iou": 0.4378081419918305,
+              "predictedPage": 0
+            },
+            {
+              "path": "lineItems.4.unitPrice",
+              "compare": "money",
+              "expected": null,
+              "predicted": null,
+              "valueCorrect": true,
+              "iou": null,
+              "predictedPage": null
+            },
+            {
+              "path": "lineItems.4.amount",
+              "compare": "money",
+              "expected": "47,600",
+              "predicted": "47,600",
+              "valueCorrect": true,
+              "iou": 0.6667249978125792,
+              "predictedPage": 0
+            },
+            {
+              "path": "subtotal",
+              "compare": "money",
+              "expected": "325,600",
+              "predicted": "325,600",
+              "valueCorrect": true,
+              "iou": 0.6719888389396997,
+              "predictedPage": 0
+            },
+            {
+              "path": "discount",
+              "compare": "money",
+              "expected": null,
+              "predicted": null,
+              "valueCorrect": true,
+              "iou": null,
+              "predictedPage": null
+            },
+            {
+              "path": "serviceCharge",
+              "compare": "money",
+              "expected": "17,908",
+              "predicted": "17,908",
+              "valueCorrect": true,
+              "iou": 0.7518433412644399,
+              "predictedPage": 0
+            },
+            {
+              "path": "tax",
+              "compare": "money",
+              "expected": "34,351",
+              "predicted": "34,351",
+              "valueCorrect": true,
+              "iou": 0.7081765812367741,
+              "predictedPage": 0
+            },
+            {
+              "path": "total",
+              "compare": "money",
+              "expected": "377,859",
+              "predicted": "377,859",
+              "valueCorrect": true,
+              "iou": 0.9220318738114084,
+              "predictedPage": 0
+            }
+          ],
+          "extraLineItems": 0,
+          "usage": {
+            "inputTokens": 1450,
+            "outputTokens": 3575,
+            "modelCalls": 1,
+            "costUSD": 0.03435
+          }
+        },
+        {
+          "docId": "cord/test/29",
+          "dataset": "cord",
+          "schema": "receipt",
+          "error": null,
+          "fields": [
+            {
+              "path": "lineItems.0.description",
+              "compare": "text",
+              "expected": "COLD OCHA",
+              "predicted": "COLD OCHA",
+              "valueCorrect": true,
+              "iou": 0,
+              "predictedPage": 0
+            },
+            {
+              "path": "lineItems.0.quantity",
+              "compare": "count",
+              "expected": "1",
+              "predicted": "1",
+              "valueCorrect": true,
+              "iou": 0,
+              "predictedPage": 0
+            },
+            {
+              "path": "lineItems.0.unitPrice",
+              "compare": "money",
+              "expected": null,
+              "predicted": null,
+              "valueCorrect": true,
+              "iou": null,
+              "predictedPage": null
+            },
+            {
+              "path": "lineItems.0.amount",
+              "compare": "money",
+              "expected": "10,909",
+              "predicted": "10,909",
+              "valueCorrect": true,
+              "iou": 0,
+              "predictedPage": 0
+            },
+            {
+              "path": "lineItems.1.description",
+              "compare": "text",
+              "expected": "BCA PROMO",
+              "predicted": "BCA PROMO",
+              "valueCorrect": true,
+              "iou": 0,
+              "predictedPage": 0
+            },
+            {
+              "path": "lineItems.1.quantity",
+              "compare": "count",
+              "expected": "1",
+              "predicted": "1",
+              "valueCorrect": true,
+              "iou": 0,
+              "predictedPage": 0
+            },
+            {
+              "path": "lineItems.1.unitPrice",
+              "compare": "money",
+              "expected": null,
+              "predicted": null,
+              "valueCorrect": true,
+              "iou": null,
+              "predictedPage": null
+            },
+            {
+              "path": "lineItems.1.amount",
+              "compare": "money",
+              "expected": "54,455",
+              "predicted": "54,455",
+              "valueCorrect": true,
+              "iou": 0,
+              "predictedPage": 0
+            },
+            {
+              "path": "lineItems.2.description",
+              "compare": "text",
+              "expected": "ABURA UDON SPICY",
+              "predicted": "!-ABURA UDON SPICY",
+              "valueCorrect": false,
+              "iou": null,
+              "predictedPage": 0
+            },
+            {
+              "path": "lineItems.2.quantity",
+              "compare": "count",
+              "expected": "1",
+              "predicted": "1",
+              "valueCorrect": true,
+              "iou": 0,
+              "predictedPage": 0
+            },
+            {
+              "path": "lineItems.2.unitPrice",
+              "compare": "money",
+              "expected": null,
+              "predicted": null,
+              "valueCorrect": true,
+              "iou": null,
+              "predictedPage": null
+            },
+            {
+              "path": "lineItems.2.amount",
+              "compare": "money",
+              "expected": "0",
+              "predicted": "0",
+              "valueCorrect": true,
+              "iou": 0,
+              "predictedPage": 0
+            },
+            {
+              "path": "lineItems.3.description",
+              "compare": "text",
+              "expected": ":-KAKE UDON",
+              "predicted": "!-KAKE UDON",
+              "valueCorrect": false,
+              "iou": null,
+              "predictedPage": 0
+            },
+            {
+              "path": "lineItems.3.quantity",
+              "compare": "count",
+              "expected": "1",
+              "predicted": "1",
+              "valueCorrect": true,
+              "iou": 0,
+              "predictedPage": 0
+            },
+            {
+              "path": "lineItems.3.unitPrice",
+              "compare": "money",
+              "expected": null,
+              "predicted": null,
+              "valueCorrect": true,
+              "iou": null,
+              "predictedPage": null
+            },
+            {
+              "path": "lineItems.3.amount",
+              "compare": "money",
+              "expected": "0",
+              "predicted": "0",
+              "valueCorrect": true,
+              "iou": 0,
+              "predictedPage": 0
+            },
+            {
+              "path": "lineItems.4.description",
+              "compare": "text",
+              "expected": "SKEWERED SHUMAI",
+              "predicted": "SKEWERED SHUMAI",
+              "valueCorrect": true,
+              "iou": 0,
+              "predictedPage": 0
+            },
+            {
+              "path": "lineItems.4.quantity",
+              "compare": "count",
+              "expected": "1",
+              "predicted": "1",
+              "valueCorrect": true,
+              "iou": 0,
+              "predictedPage": 0
+            },
+            {
+              "path": "lineItems.4.unitPrice",
+              "compare": "money",
+              "expected": null,
+              "predicted": null,
+              "valueCorrect": true,
+              "iou": null,
+              "predictedPage": null
+            },
+            {
+              "path": "lineItems.4.amount",
+              "compare": "money",
+              "expected": "12,727",
+              "predicted": "12,727",
+              "valueCorrect": true,
+              "iou": 0,
+              "predictedPage": 0
+            },
+            {
+              "path": "lineItems.5.description",
+              "compare": "text",
+              "expected": "SKEWERED TOFU ROLL",
+              "predicted": "SKEWERED TOFU ROLL",
+              "valueCorrect": true,
+              "iou": 0,
+              "predictedPage": 0
+            },
+            {
+              "path": "lineItems.5.quantity",
+              "compare": "count",
+              "expected": "1",
+              "predicted": "1",
+              "valueCorrect": true,
+              "iou": 0,
+              "predictedPage": 0
+            },
+            {
+              "path": "lineItems.5.unitPrice",
+              "compare": "money",
+              "expected": null,
+              "predicted": null,
+              "valueCorrect": true,
+              "iou": null,
+              "predictedPage": null
+            },
+            {
+              "path": "lineItems.5.amount",
+              "compare": "money",
+              "expected": "12,727",
+              "predicted": "12,727",
+              "valueCorrect": true,
+              "iou": 0,
+              "predictedPage": 0
+            },
+            {
+              "path": "lineItems.6.description",
+              "compare": "text",
+              "expected": "EBI TEMPURA",
+              "predicted": "EBI TEMPURA",
+              "valueCorrect": true,
+              "iou": 0,
+              "predictedPage": 0
+            },
+            {
+              "path": "lineItems.6.quantity",
+              "compare": "count",
+              "expected": "1",
+              "predicted": "1",
+              "valueCorrect": true,
+              "iou": 0,
+              "predictedPage": 0
+            },
+            {
+              "path": "lineItems.6.unitPrice",
+              "compare": "money",
+              "expected": null,
+              "predicted": null,
+              "valueCorrect": true,
+              "iou": null,
+              "predictedPage": null
+            },
+            {
+              "path": "lineItems.6.amount",
+              "compare": "money",
+              "expected": "13,636",
+              "predicted": "13,636",
+              "valueCorrect": true,
+              "iou": 0,
+              "predictedPage": 0
+            },
+            {
+              "path": "lineItems.7.description",
+              "compare": "text",
+              "expected": "KITSUNE UDON (KIDS)",
+              "predicted": "KITSUNE UDON (KIDS)",
+              "valueCorrect": true,
+              "iou": 0,
+              "predictedPage": 0
+            },
+            {
+              "path": "lineItems.7.quantity",
+              "compare": "count",
+              "expected": "1",
+              "predicted": "1",
+              "valueCorrect": true,
+              "iou": 0.5692929611108923,
+              "predictedPage": 0
+            },
+            {
+              "path": "lineItems.7.unitPrice",
+              "compare": "money",
+              "expected": null,
+              "predicted": null,
+              "valueCorrect": true,
+              "iou": null,
+              "predictedPage": null
+            },
+            {
+              "path": "lineItems.7.amount",
+              "compare": "money",
+              "expected": "28,182",
+              "predicted": "28,182",
+              "valueCorrect": true,
+              "iou": 0,
+              "predictedPage": 0
+            },
+            {
+              "path": "subtotal",
+              "compare": "money",
+              "expected": "132,636",
+              "predicted": "132,636",
+              "valueCorrect": true,
+              "iou": 0.10708619777895301,
+              "predictedPage": 0
+            },
+            {
+              "path": "discount",
+              "compare": "money",
+              "expected": null,
+              "predicted": null,
+              "valueCorrect": true,
+              "iou": null,
+              "predictedPage": null
+            },
+            {
+              "path": "serviceCharge",
+              "compare": "money",
+              "expected": null,
+              "predicted": null,
+              "valueCorrect": true,
+              "iou": null,
+              "predictedPage": null
+            },
+            {
+              "path": "tax",
+              "compare": "money",
+              "expected": "13,264",
+              "predicted": "13,264",
+              "valueCorrect": true,
+              "iou": 0.12608158220024704,
+              "predictedPage": 0
+            },
+            {
+              "path": "total",
+              "compare": "money",
+              "expected": "145,900",
+              "predicted": "145,900",
+              "valueCorrect": true,
+              "iou": 0,
+              "predictedPage": 0
+            }
+          ],
+          "extraLineItems": 0,
+          "usage": {
+            "inputTokens": 1450,
+            "outputTokens": 4190,
+            "modelCalls": 1,
+            "costUSD": 0.039885
+          }
+        },
+        {
+          "docId": "cord/test/30",
+          "dataset": "cord",
+          "schema": "receipt",
+          "error": null,
+          "fields": [
+            {
+              "path": "lineItems.0.description",
+              "compare": "text",
+              "expected": "Kupon 3",
+              "predicted": "Kupon 3",
+              "valueCorrect": true,
+              "iou": 0.8856015452490567,
+              "predictedPage": 0
+            },
+            {
+              "path": "lineItems.0.quantity",
+              "compare": "count",
+              "expected": null,
+              "predicted": null,
+              "valueCorrect": true,
+              "iou": null,
+              "predictedPage": null
+            },
+            {
+              "path": "lineItems.0.unitPrice",
+              "compare": "money",
+              "expected": null,
+              "predicted": null,
+              "valueCorrect": true,
+              "iou": null,
+              "predictedPage": null
+            },
+            {
+              "path": "lineItems.0.amount",
+              "compare": "money",
+              "expected": "28,636",
+              "predicted": "28,636",
+              "valueCorrect": true,
+              "iou": 0.8808071197706036,
+              "predictedPage": 0
+            },
+            {
+              "path": "subtotal",
+              "compare": "money",
+              "expected": "28,636",
+              "predicted": "28,636",
+              "valueCorrect": true,
+              "iou": 0.8020967410339582,
+              "predictedPage": 0
+            },
+            {
+              "path": "discount",
+              "compare": "money",
+              "expected": null,
+              "predicted": null,
+              "valueCorrect": true,
+              "iou": null,
+              "predictedPage": null
+            },
+            {
+              "path": "serviceCharge",
+              "compare": "money",
+              "expected": null,
+              "predicted": null,
+              "valueCorrect": true,
+              "iou": null,
+              "predictedPage": null
+            },
+            {
+              "path": "tax",
+              "compare": "money",
+              "expected": "2,864",
+              "predicted": "2,864",
+              "valueCorrect": true,
+              "iou": 0.7063376463055139,
+              "predictedPage": 0
+            },
+            {
+              "path": "total",
+              "compare": "money",
+              "expected": "31,500",
+              "predicted": "31,500",
+              "valueCorrect": true,
+              "iou": 0.7657823708206687,
+              "predictedPage": 0
+            }
+          ],
+          "extraLineItems": 0,
+          "usage": {
+            "inputTokens": 1450,
+            "outputTokens": 1637,
+            "modelCalls": 1,
+            "costUSD": 0.016908
+          }
+        },
+        {
+          "docId": "cord/test/35",
+          "dataset": "cord",
+          "schema": "receipt",
+          "error": null,
+          "fields": [
+            {
+              "path": "lineItems.0.description",
+              "compare": "text",
+              "expected": "TWIST DONUT",
+              "predicted": "TWIST DONUT",
+              "valueCorrect": true,
+              "iou": 0.7834457625048131,
+              "predictedPage": 0
+            },
+            {
+              "path": "lineItems.0.quantity",
+              "compare": "count",
+              "expected": "2",
+              "predicted": "2",
+              "valueCorrect": true,
+              "iou": 0.3288473184846244,
+              "predictedPage": 0
+            },
+            {
+              "path": "lineItems.0.unitPrice",
+              "compare": "money",
+              "expected": null,
+              "predicted": null,
+              "valueCorrect": true,
+              "iou": null,
+              "predictedPage": null
+            },
+            {
+              "path": "lineItems.0.amount",
+              "compare": "money",
+              "expected": "18,000",
+              "predicted": "18,000",
+              "valueCorrect": true,
+              "iou": 0.7735268207394953,
+              "predictedPage": 0
+            },
+            {
+              "path": "lineItems.1.description",
+              "compare": "text",
+              "expected": "BANANA DONUT",
+              "predicted": "BANANA DONUT",
+              "valueCorrect": true,
+              "iou": 0.7992274465039906,
+              "predictedPage": 0
+            },
+            {
+              "path": "lineItems.1.quantity",
+              "compare": "count",
+              "expected": "1",
+              "predicted": "1",
+              "valueCorrect": true,
+              "iou": 0.5244259415858963,
+              "predictedPage": 0
+            },
+            {
+              "path": "lineItems.1.unitPrice",
+              "compare": "money",
+              "expected": null,
+              "predicted": null,
+              "valueCorrect": true,
+              "iou": null,
+              "predictedPage": null
+            },
+            {
+              "path": "lineItems.1.amount",
+              "compare": "money",
+              "expected": "11,000",
+              "predicted": "11,000",
+              "valueCorrect": true,
+              "iou": 0.8480246007836026,
+              "predictedPage": 0
+            },
+            {
+              "path": "lineItems.2.description",
+              "compare": "text",
+              "expected": "CREAMCHEESE BREAD",
+              "predicted": "CREAMCHEESE BREAD",
+              "valueCorrect": true,
+              "iou": 0.8758396217607815,
+              "predictedPage": 0
+            },
+            {
+              "path": "lineItems.2.quantity",
+              "compare": "count",
+              "expected": "1",
+              "predicted": "1",
+              "valueCorrect": true,
+              "iou": 0.5501218181216864,
+              "predictedPage": 0
+            },
+            {
+              "path": "lineItems.2.unitPrice",
+              "compare": "money",
+              "expected": null,
+              "predicted": null,
+              "valueCorrect": true,
+              "iou": null,
+              "predictedPage": null
+            },
+            {
+              "path": "lineItems.2.amount",
+              "compare": "money",
+              "expected": "13,000",
+              "predicted": "13,000",
+              "valueCorrect": true,
+              "iou": 0.8091197114943826,
+              "predictedPage": 0
+            },
+            {
+              "path": "lineItems.3.description",
+              "compare": "text",
+              "expected": "FRANKFRUT SAUSAGE ROLL",
+              "predicted": "FRANKFRUT SAUSAGE ROLL",
+              "valueCorrect": true,
+              "iou": 0.8931849776475399,
+              "predictedPage": 0
+            },
+            {
+              "path": "lineItems.3.quantity",
+              "compare": "count",
+              "expected": "1",
+              "predicted": "1",
+              "valueCorrect": true,
+              "iou": 0.42852788783907253,
+              "predictedPage": 0
+            },
+            {
+              "path": "lineItems.3.unitPrice",
+              "compare": "money",
+              "expected": null,
+              "predicted": null,
+              "valueCorrect": true,
+              "iou": null,
+              "predictedPage": null
+            },
+            {
+              "path": "lineItems.3.amount",
+              "compare": "money",
+              "expected": "12,000",
+              "predicted": "12,000",
+              "valueCorrect": true,
+              "iou": 0.9558905258231523,
+              "predictedPage": 0
+            },
+            {
+              "path": "subtotal",
+              "compare": "money",
+              "expected": null,
+              "predicted": null,
+              "valueCorrect": true,
+              "iou": null,
+              "predictedPage": null
+            },
+            {
+              "path": "discount",
+              "compare": "money",
+              "expected": null,
+              "predicted": null,
+              "valueCorrect": true,
+              "iou": null,
+              "predictedPage": null
+            },
+            {
+              "path": "serviceCharge",
+              "compare": "money",
+              "expected": null,
+              "predicted": null,
+              "valueCorrect": true,
+              "iou": null,
+              "predictedPage": null
+            },
+            {
+              "path": "tax",
+              "compare": "money",
+              "expected": null,
+              "predicted": null,
+              "valueCorrect": true,
+              "iou": null,
+              "predictedPage": null
+            },
+            {
+              "path": "total",
+              "compare": "money",
+              "expected": "54,000",
+              "predicted": "54,000",
+              "valueCorrect": true,
+              "iou": 0.8602386683738802,
+              "predictedPage": 0
+            }
+          ],
+          "extraLineItems": 0,
+          "usage": {
+            "inputTokens": 1450,
+            "outputTokens": 2547,
+            "modelCalls": 1,
+            "costUSD": 0.025098
+          }
+        },
+        {
+          "docId": "cord/test/38",
+          "dataset": "cord",
+          "schema": "receipt",
+          "error": null,
+          "fields": [
+            {
+              "path": "lineItems.0.description",
+              "compare": "text",
+              "expected": "XLB Org Pork 10x",
+              "predicted": "XLB Org Pork 10x",
+              "valueCorrect": true,
+              "iou": 0.8541570599254051,
+              "predictedPage": 0
+            },
+            {
+              "path": "lineItems.0.quantity",
+              "compare": "count",
+              "expected": "1",
+              "predicted": "1",
+              "valueCorrect": true,
+              "iou": 0.5348520021216349,
+              "predictedPage": 0
+            },
+            {
+              "path": "lineItems.0.unitPrice",
+              "compare": "money",
+              "expected": null,
+              "predicted": null,
+              "valueCorrect": true,
+              "iou": null,
+              "predictedPage": null
+            },
+            {
+              "path": "lineItems.0.amount",
+              "compare": "money",
+              "expected": "78,000",
+              "predicted": "78,000",
+              "valueCorrect": true,
+              "iou": 0.847144297094761,
+              "predictedPage": 0
+            },
+            {
+              "path": "lineItems.1.description",
+              "compare": "text",
+              "expected": "Sicito Babi",
+              "predicted": "Sicito Babi",
+              "valueCorrect": true,
+              "iou": 0.9185032457176808,
+              "predictedPage": 0
+            },
+            {
+              "path": "lineItems.1.quantity",
+              "compare": "count",
+              "expected": "1",
+              "predicted": "1",
+              "valueCorrect": true,
+              "iou": 0.6387113958694546,
+              "predictedPage": 0
+            },
+            {
+              "path": "lineItems.1.unitPrice",
+              "compare": "money",
+              "expected": null,
+              "predicted": null,
+              "valueCorrect": true,
+              "iou": null,
+              "predictedPage": null
+            },
+            {
+              "path": "lineItems.1.amount",
+              "compare": "money",
+              "expected": "65,000",
+              "predicted": "65,000",
+              "valueCorrect": true,
+              "iou": 0.6578527799662813,
+              "predictedPage": 0
+            },
+            {
+              "path": "lineItems.2.description",
+              "compare": "text",
+              "expected": "Hotplate Tahu",
+              "predicted": "Hotplate Tahu",
+              "valueCorrect": true,
+              "iou": 0.7169695552470546,
+              "predictedPage": 0
+            },
+            {
+              "path": "lineItems.2.quantity",
+              "compare": "count",
+              "expected": "1",
+              "predicted": "1",
+              "valueCorrect": true,
+              "iou": 0.492989803755726,
+              "predictedPage": 0
+            },
+            {
+              "path": "lineItems.2.unitPrice",
+              "compare": "money",
+              "expected": null,
+              "predicted": null,
+              "valueCorrect": true,
+              "iou": null,
+              "predictedPage": null
+            },
+            {
+              "path": "lineItems.2.amount",
+              "compare": "money",
+              "expected": "58,000",
+              "predicted": "58,000",
+              "valueCorrect": true,
+              "iou": 0.6502238467326908,
+              "predictedPage": 0
+            },
+            {
+              "path": "lineItems.3.description",
+              "compare": "text",
+              "expected": "DF Fish Fillet Garlc",
+              "predicted": "DF Fish Fillet Garlic",
+              "valueCorrect": false,
+              "iou": null,
+              "predictedPage": 0
+            },
+            {
+              "path": "lineItems.3.quantity",
+              "compare": "count",
+              "expected": "1",
+              "predicted": "1",
+              "valueCorrect": true,
+              "iou": 0.46513585371597366,
+              "predictedPage": 0
+            },
+            {
+              "path": "lineItems.3.unitPrice",
+              "compare": "money",
+              "expected": null,
+              "predicted": null,
+              "valueCorrect": true,
+              "iou": null,
+              "predictedPage": null
+            },
+            {
+              "path": "lineItems.3.amount",
+              "compare": "money",
+              "expected": "108,000",
+              "predicted": "108,000",
+              "valueCorrect": true,
+              "iou": 0.5568230277541073,
+              "predictedPage": 0
+            },
+            {
+              "path": "lineItems.4.description",
+              "compare": "text",
+              "expected": "LM Pork Belly",
+              "predicted": "LM Pork Belly",
+              "valueCorrect": true,
+              "iou": 0.5727264008364351,
+              "predictedPage": 0
+            },
+            {
+              "path": "lineItems.4.quantity",
+              "compare": "count",
+              "expected": "1",
+              "predicted": "1",
+              "valueCorrect": true,
+              "iou": 0.5043332267741883,
+              "predictedPage": 0
+            },
+            {
+              "path": "lineItems.4.unitPrice",
+              "compare": "money",
+              "expected": null,
+              "predicted": null,
+              "valueCorrect": true,
+              "iou": null,
+              "predictedPage": null
+            },
+            {
+              "path": "lineItems.4.amount",
+              "compare": "money",
+              "expected": "88,000",
+              "predicted": "88,000",
+              "valueCorrect": true,
+              "iou": 0.48773968082249414,
+              "predictedPage": 0
+            },
+            {
+              "path": "lineItems.5.description",
+              "compare": "text",
+              "expected": "Siew Mai",
+              "predicted": "Siew Mai",
+              "valueCorrect": true,
+              "iou": 0.5026078504104675,
+              "predictedPage": 0
+            },
+            {
+              "path": "lineItems.5.quantity",
+              "compare": "count",
+              "expected": "1",
+              "predicted": "1",
+              "valueCorrect": true,
+              "iou": 0.4015713569090874,
+              "predictedPage": 0
+            },
+            {
+              "path": "lineItems.5.unitPrice",
+              "compare": "money",
+              "expected": null,
+              "predicted": null,
+              "valueCorrect": true,
+              "iou": null,
+              "predictedPage": null
+            },
+            {
+              "path": "lineItems.5.amount",
+              "compare": "money",
+              "expected": "38,800",
+              "predicted": "38,800",
+              "valueCorrect": true,
+              "iou": 0.39994626754154,
+              "predictedPage": 0
+            },
+            {
+              "path": "lineItems.6.description",
+              "compare": "text",
+              "expected": "Kwan Yin Cup",
+              "predicted": "Kwan Yin Cup",
+              "valueCorrect": true,
+              "iou": 0.42590276916599185,
+              "predictedPage": 0
+            },
+            {
+              "path": "lineItems.6.quantity",
+              "compare": "count",
+              "expected": "5",
+              "predicted": "5",
+              "valueCorrect": true,
+              "iou": 0.3053735214309368,
+              "predictedPage": 0
+            },
+            {
+              "path": "lineItems.6.unitPrice",
+              "compare": "money",
+              "expected": null,
+              "predicted": null,
+              "valueCorrect": true,
+              "iou": null,
+              "predictedPage": null
+            },
+            {
+              "path": "lineItems.6.amount",
+              "compare": "money",
+              "expected": "50,000",
+              "predicted": "50,000",
+              "valueCorrect": true,
+              "iou": 0.33489840257848597,
+              "predictedPage": 0
+            },
+            {
+              "path": "lineItems.7.description",
+              "compare": "text",
+              "expected": "Herbal Jelly",
+              "predicted": "Herbal Jelly",
+              "valueCorrect": true,
+              "iou": 0.3616143129318102,
+              "predictedPage": 0
+            },
+            {
+              "path": "lineItems.7.quantity",
+              "compare": "count",
+              "expected": "1",
+              "predicted": "1",
+              "valueCorrect": true,
+              "iou": 0.1735493755831743,
+              "predictedPage": 0
+            },
+            {
+              "path": "lineItems.7.unitPrice",
+              "compare": "money",
+              "expected": null,
+              "predicted": null,
+              "valueCorrect": true,
+              "iou": null,
+              "predictedPage": null
+            },
+            {
+              "path": "lineItems.7.amount",
+              "compare": "money",
+              "expected": "38,000",
+              "predicted": "38,000",
+              "valueCorrect": true,
+              "iou": 0.22990552878145454,
+              "predictedPage": 0
+            },
+            {
+              "path": "lineItems.8.description",
+              "compare": "text",
+              "expected": "Onde-Onde",
+              "predicted": "Onde-Onde",
+              "valueCorrect": true,
+              "iou": 0.25192572567018257,
+              "predictedPage": 0
+            },
+            {
+              "path": "lineItems.8.quantity",
+              "compare": "count",
+              "expected": "1",
+              "predicted": "1",
+              "valueCorrect": true,
+              "iou": 0.1034893225585584,
+              "predictedPage": 0
+            },
+            {
+              "path": "lineItems.8.unitPrice",
+              "compare": "money",
+              "expected": null,
+              "predicted": null,
+              "valueCorrect": true,
+              "iou": null,
+              "predictedPage": null
+            },
+            {
+              "path": "lineItems.8.amount",
+              "compare": "money",
+              "expected": "38,000",
+              "predicted": "38,000",
+              "valueCorrect": true,
+              "iou": 0.12337067814690178,
+              "predictedPage": 0
+            },
+            {
+              "path": "subtotal",
+              "compare": "money",
+              "expected": "561,800",
+              "predicted": "561,800",
+              "valueCorrect": true,
+              "iou": 0.7702257009995374,
+              "predictedPage": 0
+            },
+            {
+              "path": "discount",
+              "compare": "money",
+              "expected": null,
+              "predicted": null,
+              "valueCorrect": true,
+              "iou": null,
+              "predictedPage": null
+            },
+            {
+              "path": "serviceCharge",
+              "compare": "money",
+              "expected": "42,135",
+              "predicted": "42,135",
+              "valueCorrect": true,
+              "iou": 0.5170421608590311,
+              "predictedPage": 0
+            },
+            {
+              "path": "tax",
+              "compare": "money",
+              "expected": "60,394",
+              "predicted": "60,394",
+              "valueCorrect": true,
+              "iou": 0.38233572644623104,
+              "predictedPage": 0
+            },
+            {
+              "path": "total",
+              "compare": "money",
+              "expected": "664,329",
+              "predicted": "664,329",
+              "valueCorrect": true,
+              "iou": 0.7866486577971881,
+              "predictedPage": 0
+            }
+          ],
+          "extraLineItems": 0,
+          "usage": {
+            "inputTokens": 1470,
+            "outputTokens": 4724,
+            "modelCalls": 1,
+            "costUSD": 0.044721
+          }
+        },
+        {
+          "docId": "cord/test/41",
+          "dataset": "cord",
+          "schema": "receipt",
+          "error": null,
+          "fields": [
+            {
+              "path": "lineItems.0.description",
+              "compare": "text",
+              "expected": "Chicken Maryland",
+              "predicted": "Chicken Maryland",
+              "valueCorrect": true,
+              "iou": 0.8590633028283247,
+              "predictedPage": 0
+            },
+            {
+              "path": "lineItems.0.quantity",
+              "compare": "count",
+              "expected": null,
+              "predicted": null,
+              "valueCorrect": true,
+              "iou": null,
+              "predictedPage": null
+            },
+            {
+              "path": "lineItems.0.unitPrice",
+              "compare": "money",
+              "expected": null,
+              "predicted": null,
+              "valueCorrect": true,
+              "iou": null,
+              "predictedPage": null
+            },
+            {
+              "path": "lineItems.0.amount",
+              "compare": "money",
+              "expected": "47619.00",
+              "predicted": "47619.00",
+              "valueCorrect": true,
+              "iou": 0.7635199425209283,
+              "predictedPage": 0
+            },
+            {
+              "path": "lineItems.1.description",
+              "compare": "text",
+              "expected": "Cappucino (Hot/Iced)",
+              "predicted": "Cappucino (Hot/Iced)",
+              "valueCorrect": true,
+              "iou": 0.9363475101887785,
+              "predictedPage": 0
+            },
+            {
+              "path": "lineItems.1.quantity",
+              "compare": "count",
+              "expected": null,
+              "predicted": null,
+              "valueCorrect": true,
+              "iou": null,
+              "predictedPage": null
+            },
+            {
+              "path": "lineItems.1.unitPrice",
+              "compare": "money",
+              "expected": null,
+              "predicted": null,
+              "valueCorrect": true,
+              "iou": null,
+              "predictedPage": null
+            },
+            {
+              "path": "lineItems.1.amount",
+              "compare": "money",
+              "expected": "30303.00",
+              "predicted": "30303.00",
+              "valueCorrect": true,
+              "iou": 0.9000008112676061,
+              "predictedPage": 0
+            },
+            {
+              "path": "lineItems.2.description",
+              "compare": "text",
+              "expected": "Naga Lychee Juice",
+              "predicted": "Naga Lychee Juice",
+              "valueCorrect": true,
+              "iou": 0.9652182437700598,
+              "predictedPage": 0
+            },
+            {
+              "path": "lineItems.2.quantity",
+              "compare": "count",
+              "expected": null,
+              "predicted": null,
+              "valueCorrect": true,
+              "iou": null,
+              "predictedPage": null
+            },
+            {
+              "path": "lineItems.2.unitPrice",
+              "compare": "money",
+              "expected": null,
+              "predicted": null,
+              "valueCorrect": true,
+              "iou": null,
+              "predictedPage": null
+            },
+            {
+              "path": "lineItems.2.amount",
+              "compare": "money",
+              "expected": "34632.00",
+              "predicted": "34632.00",
+              "valueCorrect": true,
+              "iou": 0.7805028768367898,
+              "predictedPage": 0
+            },
+            {
+              "path": "lineItems.3.description",
+              "compare": "text",
+              "expected": "Cafe Latte",
+              "predicted": "Cafe Latte",
+              "valueCorrect": true,
+              "iou": 0.8590138165363652,
+              "predictedPage": 0
+            },
+            {
+              "path": "lineItems.3.quantity",
+              "compare": "count",
+              "expected": null,
+              "predicted": null,
+              "valueCorrect": true,
+              "iou": null,
+              "predictedPage": null
+            },
+            {
+              "path": "lineItems.3.unitPrice",
+              "compare": "money",
+              "expected": null,
+              "predicted": null,
+              "valueCorrect": true,
+              "iou": null,
+              "predictedPage": null
+            },
+            {
+              "path": "lineItems.3.amount",
+              "compare": "money",
+              "expected": "30303.00",
+              "predicted": "30303.00",
+              "valueCorrect": true,
+              "iou": 0.810102224713617,
+              "predictedPage": 0
+            },
+            {
+              "path": "lineItems.4.description",
+              "compare": "text",
+              "expected": "Hot Chocolate Marshmallo",
+              "predicted": "Hot Chocolate Marshmallo",
+              "valueCorrect": true,
+              "iou": 0.9014783372192602,
+              "predictedPage": 0
+            },
+            {
+              "path": "lineItems.4.quantity",
+              "compare": "count",
+              "expected": null,
+              "predicted": null,
+              "valueCorrect": true,
+              "iou": null,
+              "predictedPage": null
+            },
+            {
+              "path": "lineItems.4.unitPrice",
+              "compare": "money",
+              "expected": null,
+              "predicted": null,
+              "valueCorrect": true,
+              "iou": null,
+              "predictedPage": null
+            },
+            {
+              "path": "lineItems.4.amount",
+              "compare": "money",
+              "expected": "30303.00",
+              "predicted": "30303.00",
+              "valueCorrect": true,
+              "iou": 0.7661058051633804,
+              "predictedPage": 0
+            },
+            {
+              "path": "lineItems.5.description",
+              "compare": "text",
+              "expected": "Chicken Cesar Salad",
+              "predicted": "Chicken Cesar Salad",
+              "valueCorrect": true,
+              "iou": 0.9198427232331837,
+              "predictedPage": 0
+            },
+            {
+              "path": "lineItems.5.quantity",
+              "compare": "count",
+              "expected": null,
+              "predicted": null,
+              "valueCorrect": true,
+              "iou": null,
+              "predictedPage": null
+            },
+            {
+              "path": "lineItems.5.unitPrice",
+              "compare": "money",
+              "expected": null,
+              "predicted": null,
+              "valueCorrect": true,
+              "iou": null,
+              "predictedPage": null
+            },
+            {
+              "path": "lineItems.5.amount",
+              "compare": "money",
+              "expected": "43290.00",
+              "predicted": "43290.00",
+              "valueCorrect": true,
+              "iou": 0.797017601783501,
+              "predictedPage": 0
+            },
+            {
+              "path": "lineItems.6.description",
+              "compare": "text",
+              "expected": "Mineral Water",
+              "predicted": "Mineral Water",
+              "valueCorrect": true,
+              "iou": 0.8779636479531553,
+              "predictedPage": 0
+            },
+            {
+              "path": "lineItems.6.quantity",
+              "compare": "count",
+              "expected": null,
+              "predicted": null,
+              "valueCorrect": true,
+              "iou": null,
+              "predictedPage": null
+            },
+            {
+              "path": "lineItems.6.unitPrice",
+              "compare": "money",
+              "expected": null,
+              "predicted": null,
+              "valueCorrect": true,
+              "iou": null,
+              "predictedPage": null
+            },
+            {
+              "path": "lineItems.6.amount",
+              "compare": "money",
+              "expected": "12987.00",
+              "predicted": "12987.00",
+              "valueCorrect": true,
+              "iou": 0.7463281239849222,
+              "predictedPage": 0
+            },
+            {
+              "path": "lineItems.7.description",
+              "compare": "text",
+              "expected": "Mineral Water",
+              "predicted": "Mineral Water",
+              "valueCorrect": true,
+              "iou": 0.6883442316363194,
+              "predictedPage": 0
+            },
+            {
+              "path": "lineItems.7.quantity",
+              "compare": "count",
+              "expected": null,
+              "predicted": null,
+              "valueCorrect": true,
+              "iou": null,
+              "predictedPage": null
+            },
+            {
+              "path": "lineItems.7.unitPrice",
+              "compare": "money",
+              "expected": null,
+              "predicted": null,
+              "valueCorrect": true,
+              "iou": null,
+              "predictedPage": null
+            },
+            {
+              "path": "lineItems.7.amount",
+              "compare": "money",
+              "expected": "12987.00",
+              "predicted": "12987.00",
+              "valueCorrect": true,
+              "iou": 0.7079053851569715,
+              "predictedPage": 0
+            },
+            {
+              "path": "lineItems.8.description",
+              "compare": "text",
+              "expected": "Lychee/Peach/Lemon/Mango",
+              "predicted": "Lychee/Peach/Lemon/Mango",
+              "valueCorrect": true,
+              "iou": 0.7874302267252173,
+              "predictedPage": 0
+            },
+            {
+              "path": "lineItems.8.quantity",
+              "compare": "count",
+              "expected": null,
+              "predicted": null,
+              "valueCorrect": true,
+              "iou": null,
+              "predictedPage": null
+            },
+            {
+              "path": "lineItems.8.unitPrice",
+              "compare": "money",
+              "expected": null,
+              "predicted": null,
+              "valueCorrect": true,
+              "iou": null,
+              "predictedPage": null
+            },
+            {
+              "path": "lineItems.8.amount",
+              "compare": "money",
+              "expected": "25974.00",
+              "predicted": "25974.00",
+              "valueCorrect": true,
+              "iou": 0.6837126325382641,
+              "predictedPage": 0
+            },
+            {
+              "path": "lineItems.9.description",
+              "compare": "text",
+              "expected": "Chicken Maryland",
+              "predicted": "Chicken Maryland",
+              "valueCorrect": true,
+              "iou": 0.8069713434246131,
+              "predictedPage": 0
+            },
+            {
+              "path": "lineItems.9.quantity",
+              "compare": "count",
+              "expected": null,
+              "predicted": null,
+              "valueCorrect": true,
+              "iou": null,
+              "predictedPage": null
+            },
+            {
+              "path": "lineItems.9.unitPrice",
+              "compare": "money",
+              "expected": null,
+              "predicted": null,
+              "valueCorrect": true,
+              "iou": null,
+              "predictedPage": null
+            },
+            {
+              "path": "lineItems.9.amount",
+              "compare": "money",
+              "expected": "47619.00",
+              "predicted": "47619.00",
+              "valueCorrect": true,
+              "iou": 0.5246260751721957,
+              "predictedPage": 0
+            },
+            {
+              "path": "subtotal",
+              "compare": "money",
+              "expected": "316017.00",
+              "predicted": "316017.00",
+              "valueCorrect": true,
+              "iou": 0.9472668786033022,
+              "predictedPage": 0
+            },
+            {
+              "path": "discount",
+              "compare": "money",
+              "expected": null,
+              "predicted": null,
+              "valueCorrect": true,
+              "iou": null,
+              "predictedPage": null
+            },
+            {
+              "path": "serviceCharge",
+              "compare": "money",
+              "expected": "48982.68",
+              "predicted": "48982.68",
+              "valueCorrect": true,
+              "iou": 0.8210660483477215,
+              "predictedPage": 0
+            },
+            {
+              "path": "tax",
+              "compare": "money",
+              "expected": null,
+              "predicted": null,
+              "valueCorrect": true,
+              "iou": null,
+              "predictedPage": null
+            },
+            {
+              "path": "total",
+              "compare": "money",
+              "expected": "365000.00",
+              "predicted": "365000.00",
+              "valueCorrect": true,
+              "iou": 0.8676034357241333,
+              "predictedPage": 0
+            }
+          ],
+          "extraLineItems": 0,
+          "usage": {
+            "inputTokens": 1470,
+            "outputTokens": 4850,
+            "modelCalls": 1,
+            "costUSD": 0.045855
+          }
+        }
+      ]
+    }
+  ]
+}

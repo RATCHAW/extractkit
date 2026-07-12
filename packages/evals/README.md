@@ -27,9 +27,11 @@ The lineup (`src/models.ts`) spans three providers — **Anthropic**, **OpenAI**
 | --- | --- | --- |
 | Anthropic | `ANTHROPIC_API_KEY` | `claude-opus-4-8`, `claude-sonnet-5`, `claude-haiku-4-5` |
 | OpenAI | `OPENAI_API_KEY` | `gpt-5.6-sol`, `gpt-5.6-luna`, `gpt-5.4-mini` |
-| Google | `GOOGLE_GENERATIVE_AI_API_KEY` | `gemini-2.5-pro`, `gemini-2.5-flash`, `gemini-2.5-flash-lite` |
+| Google | `GOOGLE_GENERATIVE_AI_API_KEY` | `gemini-3.5-flash`, `gemini-2.5-pro`, `gemini-2.5-flash`, `gemini-2.5-flash-lite` |
 
 By default the run includes every provider whose API key is set, so exporting only `OPENAI_API_KEY` benchmarks OpenAI alone — a cheaper way to iterate than the full Anthropic lineup. Pin the selection explicitly with `EVAL_PROVIDERS` (comma-separated, e.g. `EVAL_PROVIDERS=openai,google`); each named provider must have its key set.
+
+To run a single model instead of a provider's whole lineup, set `EVAL_MODELS` to a comma-separated list of model names (e.g. `EVAL_MODELS=gemini-3.5-flash pnpm run-eval`). Each named model must belong to a provider whose key is set; unknown or unkeyed model names fail fast.
 
 `pnpm pin` re-runs curation and rewrites the manifest — only needed when changing the selection, not to reproduce a run.
 
